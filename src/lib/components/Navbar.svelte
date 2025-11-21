@@ -18,6 +18,9 @@
   import MonthPicker from "./MonthPicker.svelte";
   import Logo from "./Logo.svelte";
   import InputRange from "./InputRange.svelte";
+  import LanguageSwitcher from "./LanguageSwitcher.svelte";
+  import LL from "$lib/i18n/i18n-svelte";
+  import type { TranslationFunctions } from "$lib/i18n/i18n-types";
   export let isBurger: boolean = null;
   const readonly = USER_CONFIG.readonly;
 
@@ -27,15 +30,17 @@
     }
   });
 
-  const RecurringIcons = [
-    { icon: "fa-circle-check", color: "success", label: "Cleared" },
-    { icon: "fa-circle-check", color: "warning-dark", label: "Cleared late" },
-    { icon: "fa-exclamation-triangle", color: "danger", label: "Past due" },
-    { icon: "fa-circle-check", color: "grey", label: "Upcoming" }
+  type LabelResolver = (ll: TranslationFunctions) => string;
+
+  const RecurringIcons: { icon: string; color: string; label: LabelResolver }[] = [
+    { icon: "fa-circle-check", color: "success", label: (ll) => ll.nav.legend.cleared() },
+    { icon: "fa-circle-check", color: "warning-dark", label: (ll) => ll.nav.legend.clearedLate() },
+    { icon: "fa-exclamation-triangle", color: "danger", label: (ll) => ll.nav.legend.pastDue() },
+    { icon: "fa-circle-check", color: "grey", label: (ll) => ll.nav.legend.upcoming() }
   ];
 
   interface Link {
-    label: string;
+    label: LabelResolver;
     href: string;
     tag?: string;
     help?: string;
@@ -49,21 +54,25 @@
     disablePreload?: boolean;
   }
   const links: Link[] = [
-    { label: "Dashboard", href: "/", hide: true },
+    { label: (ll) => ll.nav.sections.dashboard(), href: "/", hide: true },
     {
-      label: "Cash Flow",
+      label: (ll) => ll.nav.sections.cashFlow.label(),
       href: "/cash_flow",
       children: [
-        { label: "Income Statement", href: "/income_statement", financialYearPicker: true },
-        { label: "Monthly", href: "/monthly", dateRangeSelector: true },
         {
-          label: "Yearly",
+          label: (ll) => ll.nav.sections.cashFlow.incomeStatement(),
+          href: "/income_statement",
+          financialYearPicker: true
+        },
+        { label: (ll) => ll.nav.sections.cashFlow.monthly(), href: "/monthly", dateRangeSelector: true },
+        {
+          label: (ll) => ll.nav.sections.cashFlow.yearly(),
           href: "/yearly",
           financialYearPicker: true,
           maxDepthSelector: true
         },
         {
-          label: "Recurring",
+          label: (ll) => ll.nav.sections.cashFlow.recurring(),
           href: "/recurring",
           help: "recurring",
           monthPicker: true,
@@ -72,70 +81,79 @@
       ]
     },
     {
-      label: "Expenses",
+      label: (ll) => ll.nav.sections.expenses.label(),
       href: "/expense",
       children: [
-        { label: "Monthly", href: "/monthly", monthPicker: true, dateRangeSelector: true },
-        { label: "Yearly", href: "/yearly", financialYearPicker: true },
-        { label: "Budget", href: "/budget", help: "budget", monthPicker: true }
+        {
+          label: (ll) => ll.nav.sections.expenses.monthly(),
+          href: "/monthly",
+          monthPicker: true,
+          dateRangeSelector: true
+        },
+        { label: (ll) => ll.nav.sections.expenses.yearly(), href: "/yearly", financialYearPicker: true },
+        { label: (ll) => ll.nav.sections.expenses.budget(), href: "/budget", help: "budget", monthPicker: true }
       ]
     },
     {
-      label: "Assets",
+      label: (ll) => ll.nav.sections.assets.label(),
       href: "/assets",
       children: [
-        { label: "Balance", href: "/balance" },
-        { label: "Networth", href: "/networth", dateRangeSelector: true },
-        { label: "Investment", href: "/investment" },
-        { label: "Gain", href: "/gain" },
-        { label: "Allocation", href: "/allocation", help: "allocation-targets" },
-        { label: "Analysis", href: "/analysis", tag: "alpha", help: "analysis" }
+        { label: (ll) => ll.nav.sections.assets.balance(), href: "/balance" },
+        { label: (ll) => ll.nav.sections.assets.networth(), href: "/networth", dateRangeSelector: true },
+        { label: (ll) => ll.nav.sections.assets.investment(), href: "/investment" },
+        { label: (ll) => ll.nav.sections.assets.gain(), href: "/gain" },
+        { label: (ll) => ll.nav.sections.assets.allocation(), href: "/allocation", help: "allocation-targets" },
+        { label: (ll) => ll.nav.sections.assets.analysis(), href: "/analysis", tag: "alpha", help: "analysis" }
       ]
     },
     {
-      label: "Liabilities",
+      label: (ll) => ll.nav.sections.liabilities.label(),
       href: "/liabilities",
       children: [
-        { label: "Balance", href: "/balance" },
-        { label: "Credit Cards", href: "/credit_cards", help: "credit-cards" },
-        { label: "Repayment", href: "/repayment" },
-        { label: "Interest", href: "/interest" }
+        { label: (ll) => ll.nav.sections.liabilities.balance(), href: "/balance" },
+        { label: (ll) => ll.nav.sections.liabilities.creditCards(), href: "/credit_cards", help: "credit-cards" },
+        { label: (ll) => ll.nav.sections.liabilities.repayment(), href: "/repayment" },
+        { label: (ll) => ll.nav.sections.liabilities.interest(), href: "/interest" }
       ]
     },
-    { label: "Income", href: "/income" },
+    { label: (ll) => ll.nav.sections.income.label(), href: "/income" },
     {
-      label: "Ledger",
+      label: (ll) => ll.nav.sections.ledger.label(),
       href: "/ledger",
       children: [
-        { label: "Import", href: "/import", help: "import" },
-        { label: "Editor", href: "/editor", help: "editor", disablePreload: true },
-        { label: "Transactions", href: "/transaction", help: "bulk-edit" },
-        { label: "Postings", href: "/posting" },
-        { label: "Price", href: "/price" }
+        { label: (ll) => ll.nav.sections.ledger["import"](), href: "/import", help: "import" },
+        { label: (ll) => ll.nav.sections.ledger.editor(), href: "/editor", help: "editor", disablePreload: true },
+        { label: (ll) => ll.nav.sections.ledger.transactions(), href: "/transaction", help: "bulk-edit" },
+        { label: (ll) => ll.nav.sections.ledger.postings(), href: "/posting" },
+        { label: (ll) => ll.nav.sections.ledger.price(), href: "/price" }
       ]
     },
     {
-      label: "More",
+      label: (ll) => ll.nav.sections.more.label(),
       href: "/more",
       children: [
-        { label: "Configuration", href: "/config", help: "config" },
-        { label: "Sheets", href: "/sheets", help: "sheets", disablePreload: true },
-        { label: "Goals", href: "/goals", help: "goals" },
-        { label: "Doctor", href: "/doctor" },
-        { label: "Logs", href: "/logs" }
+        { label: (ll) => ll.nav.sections.more.config(), href: "/config", help: "config" },
+        { label: (ll) => ll.nav.sections.more.sheets(), href: "/sheets", help: "sheets", disablePreload: true },
+        { label: (ll) => ll.nav.sections.more.goals(), href: "/goals", help: "goals" },
+        { label: (ll) => ll.nav.sections.more.doctor(), href: "/doctor" },
+        { label: (ll) => ll.nav.sections.more.logs(), href: "/logs" }
       ]
     }
   ];
 
   const tax = {
-    label: "Tax",
+    label: (ll: TranslationFunctions) => ll.nav.sections.more.tax(),
     href: "/tax",
     help: "tax",
     children: [
-      { label: "Harvest", href: "/harvest", help: "tax-harvesting" },
-      { label: "Capital Gains", href: "/capital_gains", help: "capital-gains" },
+      { label: (ll: TranslationFunctions) => ll.nav.sections.more.taxHarvest(), href: "/harvest", help: "tax-harvesting" },
       {
-        label: "Schedule AL",
+        label: (ll: TranslationFunctions) => ll.nav.sections.more.taxCapitalGains(),
+        href: "/capital_gains",
+        help: "capital-gains"
+      },
+      {
+        label: (ll: TranslationFunctions) => ll.nav.sections.more.taxScheduleAL(),
         href: "/schedule_al",
         help: "schedule-al",
         financialYearPicker: true
@@ -147,7 +165,7 @@
     _.last(links).children.push(tax);
   }
 
-  const about = { label: "About", href: "/about" };
+  const about = { label: (ll: TranslationFunctions) => ll.nav.sections.more.about(), href: "/about" };
   _.last(links).children.push(about);
 
   let selectedLink: Link = null;
@@ -196,9 +214,9 @@
       {#if $obscure}
         <span class="icon is-small is-size-5">
           <i class="fas fa-user-secret" />
-        </span><span class="ml-2 is-primary-color">Paisa</span>
+        </span><span class="ml-2 is-primary-color">{$LL.common.appName()}</span>
       {:else}
-        <Logo size={22} /><span class="ml-1 is-primary-color">Paisa</span>
+        <Logo size={22} /><span class="ml-1 is-primary-color">{$LL.common.appName()}</span>
       {/if}
     </a>
     <a
@@ -226,7 +244,7 @@
               class="navbar-item"
               href={link.href}
               data-sveltekit-preload-data={link.disablePreload ? "tap" : "hover"}
-              class:is-active={normalizedPath == link.href}>{link.label}</a
+              class:is-active={normalizedPath == link.href}>{link.label($LL)}</a
             >
           {/if}
         {:else}
@@ -236,7 +254,7 @@
               class:is-active={normalizedPath.startsWith(link.href)}
               on:click|preventDefault={(e) =>
                 isMobile() && e.currentTarget.parentElement.classList.toggle("is-active")}
-              >{link.label}</a
+              >{link.label($LL)}</a
             >
             <div class="navbar-dropdown {!isMobile() && 'is-boxed'}">
               {#each link.children as sublink}
@@ -246,7 +264,7 @@
                     class="navbar-item"
                     {href}
                     data-sveltekit-preload-data={sublink.disablePreload ? "tap" : "hover"}
-                    class:is-active={normalizedPath.startsWith(href)}>{sublink.label}</a
+                    class:is-active={normalizedPath.startsWith(href)}>{sublink.label($LL)}</a
                   >
                 {:else}
                   <div class="nested has-dropdown navbar-item">
@@ -254,7 +272,7 @@
                       class="navbar-link is-arrowless is-flex is-justify-content-space-between is-active"
                       class:is-active={normalizedPath.startsWith(href)}
                     >
-                      <span>{sublink.label}</span>
+                      <span>{sublink.label($LL)}</span>
                       <span class="icon is-small">
                         <i
                           class="fas {isMobile() ? 'fa-angle-down' : 'fa-angle-right'}"
@@ -273,7 +291,7 @@
                               ? "tap"
                               : "hover"}
                             class:is-active={normalizedPath == href + subsublink.href}
-                            >{subsublink.label}</a
+                            >{subsublink.label($LL)}</a
                           >
                         {/each}
                       </div>
@@ -293,11 +311,15 @@
             <p class="control">
               <span
                 class="mt-1 tag is-rounded is-danger is-light invertable"
-                data-tippy-content="<p>Paisa is in readonly mode</p>">readonly</span
+                data-tippy-content={`<p>${$LL.common.readonlyTooltip()}</p>`}
+                >{$LL.common.readonlyTag()}</span
               >
             </p>
           {/if}
 
+          <p class="control">
+            <LanguageSwitcher />
+          </p>
           <p class="control">
             <ThemeSwitcher />
           </p>
@@ -319,7 +341,7 @@
     >
       <ul>
         <li>
-          <a class="is-inactive">{selectedLink.label}</a>
+          <a class="is-inactive">{selectedLink.label($LL)}</a>
           {#if selectedLink.help}
             <a style="margin-left: -10px;" class="p-0" href={helpUrl(selectedLink.help)}
               ><span class="icon is-small">
@@ -336,7 +358,7 @@
         </li>
         {#if selectedSubLink}
           <li>
-            <a class="is-inactive">{selectedSubLink.label}</a>
+            <a class="is-inactive">{selectedSubLink.label($LL)}</a>
 
             {#if selectedSubLink.help}
               <a style="margin-left: -10px;" class="p-0" href={helpUrl(selectedSubLink.help)}
@@ -357,7 +379,7 @@
         {#if selectedSubLink}
           {#if selectedSubSubLink}
             <li>
-              <a class="is-inactive">{selectedSubSubLink.label}</a>
+              <a class="is-inactive">{selectedSubSubLink.label($LL)}</a>
             </li>
           {:else if selectedLink.href + selectedSubLink.href != normalizedPath}
             <li>
@@ -373,11 +395,12 @@
     {#if selectedSubLink?.recurringIcons}
       <div class="flex gap-5 items-center has-text-grey">
         {#each RecurringIcons as icon}
-          <div data-tippy-content="<p>{icon.label}</p>">
+          {@const legendLabel = icon.label($LL)}
+          <div data-tippy-content={`<p>${legendLabel}</p>`}>
             <span class="icon is-small has-text-{icon.color}">
               <i class={"fas " + icon.icon} />
             </span>
-            <span class="is-hidden-mobile">{icon.label}</span>
+            <span class="is-hidden-mobile">{legendLabel}</span>
           </div>
         {/each}
       </div>

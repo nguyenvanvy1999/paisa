@@ -3,6 +3,7 @@
   import Logo from "$lib/components/Logo.svelte";
   import { login } from "$lib/utils";
   import _ from "lodash";
+  import LL from "$lib/i18n/i18n-svelte";
   let username = "";
   let password = "";
 
@@ -18,8 +19,8 @@
     invalid = !success;
     if (success) {
       goto("/");
-    } else if (error) {
-      invalidErrorMessage = error;
+    } else {
+      invalidErrorMessage = error || $LL.auth.login.invalidCredentials();
     }
   }
 </script>
@@ -33,21 +34,33 @@
             <div class="flex justify-center items-center mb-2">
               <div class="mt-1 mr-1"><Logo size={32} /></div>
               <div class="is-size-3">
-                <a href="https://paisa.fyi" class="is-primary-color">Paisa</a>
+                <a href="https://paisa.fyi" class="is-primary-color">{$LL.common.appName()}</a>
               </div>
             </div>
             <form on:submit|preventDefault={tryLogin}>
               <div class="field">
-                <label for="" class="label">Username</label>
+                <label for="username" class="label">{$LL.auth.login.usernameLabel()}</label>
                 <div class="control">
-                  <input class="input" type="text" bind:value={username} />
+                  <input
+                    id="username"
+                    class="input"
+                    type="text"
+                    bind:value={username}
+                    autocomplete="username"
+                  />
                 </div>
               </div>
 
               <div class="field">
-                <label for="" class="label">Password</label>
+                <label for="password" class="label">{$LL.auth.login.passwordLabel()}</label>
                 <div class="control">
-                  <input class="input" type="password" bind:value={password} />
+                  <input
+                    id="password"
+                    class="input"
+                    type="password"
+                    bind:value={password}
+                    autocomplete="current-password"
+                  />
                 </div>
                 {#if invalid}
                   <p class="help is-danger">{invalidErrorMessage}</p>
@@ -56,10 +69,17 @@
 
               <div class="field is-grouped is-grouped-right">
                 <div class="control">
-                  <button class="button is-link" disabled={loginDisabled}>Login</button>
+                  <button class="button is-link" disabled={loginDisabled}>
+                    {$LL.auth.login.submit()}
+                  </button>
                 </div>
               </div>
             </form>
+            <p class="mt-4 has-text-centered">
+              <a class="is-primary-color" href="https://paisa.fyi" target="_blank" rel="noreferrer">
+                {$LL.auth.login.helpLinkLabel()}
+              </a>
+            </p>
           </div>
         </div>
       </div>

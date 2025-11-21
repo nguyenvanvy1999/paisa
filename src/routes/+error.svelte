@@ -1,5 +1,6 @@
 <script lang="ts">
   import { page } from "$app/stores";
+  import LL from "$lib/i18n/i18n-svelte";
 </script>
 
 <section class="section">
@@ -8,29 +9,32 @@
       <div class="column is-4 is-offset-4 mt-5">
         {#if $page.error.status === 404}
           <article class="message invertable is-danger">
-            <div class="message-header">Page not found</div>
+            <div class="message-header">{$LL.error.notFoundTitle()}</div>
             <div class="message-body">
-              <p>
-                The page you are looking for does not exist. It may have been moved, or removed
-                altogether. Perhaps you can return back to the site's <a href="/">homepage</a> and see
-                if you can find what you are looking for.
+              <p>{$LL.error.notFoundBody()}</p>
+              <p class="mt-2">
+                <a class="is-primary-color" href="/"
+                  >{$LL.error.notFoundCta()}</a
+                >
               </p>
             </div>
           </article>
         {:else}
           <article class="message invertable is-danger">
-            <div class="message-header">Something Went Wrong</div>
+            <div class="message-header">{$LL.error.genericTitle()}</div>
             <div class="message-body">
-              <p>Paisa has encountered a critical error</p>
+              <p>{$LL.error.genericBody()}</p>
               <p class="mt-2">{$page.error.message}</p>
               {#if $page.error.stack}
-                <pre class="mt-2">{$page.error.stack}</pre>
+                <p class="mt-3 has-text-weight-semibold">{$LL.error.detailsLabel()}</p>
+                <pre class="mt-1">{$page.error.stack}</pre>
               {/if}
               <p class="mt-5">
-                Please report this issue at <a href="https://github.com/ananthakumaran/paisa/issues"
-                  >https://github.com/ananthakumaran/paisa/issues</a
-                >. Closing and reopening the app may help.
+                <a href="https://github.com/ananthakumaran/paisa/issues" target="_blank" rel="noreferrer"
+                  >{$LL.error.bugReportLabel()}</a
+                >
               </p>
+              <p>{$LL.error.restartHint()}</p>
             </div>
           </article>
         {/if}

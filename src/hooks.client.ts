@@ -42,6 +42,9 @@ import Handlebars from "handlebars";
 import helpers from "$lib/template_helpers";
 import * as toast from "bulma-toast";
 import _ from "lodash";
+import LL from "$lib/i18n/i18n-svelte";
+import { initClientLocale } from "$lib/i18n/locale";
+import { get } from "svelte/store";
 
 import "@formatjs/intl-numberformat/polyfill";
 import "@formatjs/intl-numberformat/locale-data/en";
@@ -67,6 +70,8 @@ toast.setDefaults({
 
 globalThis.USER_CONFIG = {} as any;
 
+void initClientLocale();
+
 export const handleError: HandleClientError = async ({ error, status, message }) => {
   let stack = null;
   if (error instanceof Error) {
@@ -87,18 +92,33 @@ function formatError(error: any) {
   }
 }
 
-const footer = `
-<p class="mt-3">
-  Please report this issue at <a href="https://github.com/ananthakumaran/paisa/issues"
-    >https://github.com/ananthakumaran/paisa/issues</a
-  >. Closing and reopening the app may help.
-</p>
-`;
+const BUG_REPORT_URL = "https://github.com/ananthakumaran/paisa/issues";
+
+function errorTranslations() {
+  const translator = get(LL);
+  return {
+    title: translator.error.genericTitle(),
+    description: translator.error.genericBody(),
+    bugReport: translator.error.bugReportLabel(),
+    restartHint: translator.error.restartHint()
+  };
+}
 
 function displayError(error: any) {
   const message = formatError(error);
+  const { title, description, bugReport, restartHint } = errorTranslations();
   toast.toast({
-    message: `<div class="message invertable is-danger"><div class="message-header">Something Went Wrong</div><div class="message-body">${message}${footer}</div></div>`,
+    message: `<div class="message invertable is-danger">
+      <div class="message-header">${title}</div>
+      <div class="message-body">
+        <p>${description}</p>
+        <p class="mt-2">${message}</p>
+        <p class="mt-3">
+          <a href="${BUG_REPORT_URL}" target="_blank" rel="noreferrer">${bugReport}</a>
+        </p>
+        <p class="mt-1">${restartHint}</p>
+      </div>
+    </div>`,
     type: "is-danger",
     dismissible: true,
     pauseOnHover: true,
