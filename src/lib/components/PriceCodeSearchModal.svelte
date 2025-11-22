@@ -1,11 +1,12 @@
 <script lang="ts">
   import Select from "svelte-select";
   import Modal from "$lib/components/Modal.svelte";
+  import { LL } from "$lib/i18n/i18n-svelte";
   import _ from "lodash";
   import { createEventDispatcher, onMount } from "svelte";
   import { ajax, type AutoCompleteItem, type PriceProvider } from "$lib/utils";
 
-  let label = "Choose Price Provider";
+  let label = $LL.tables.priceCodeSearch.title();
   export let open = false;
   let code = "";
 
@@ -86,7 +87,7 @@
   <div style="min-height: 500px;" slot="body">
     {#if selectedProvider}
       <div class="field">
-        <label class="label" for="">Provider</label>
+        <label class="label" for="">{$LL.tables.priceCodeSearch.provider()}</label>
         <div class="control">
           <div class="select">
             <select bind:value={selectedProvider} required on:change={(_e) => reset()}>
@@ -154,16 +155,18 @@
           dispatch("select", { code: code, provider: selectedProvider.code });
           reset();
           close(e);
-        }}>Select</button
+        }}>{$LL.tables.priceCodeSearch.select()}</button
       >
-      <button class="button" on:click={(e) => close(e)}>Cancel</button>
+      <button class="button" on:click={(e) => close(e)}
+        >{$LL.tables.priceCodeSearch.cancel()}</button
+      >
     </div>
 
     <div>
       <button
         on:click={(_e) => clearProviderCache()}
         class="button is-danger {isLoading && 'is-loading'}"
-        disabled={!selectedProvider}>Clear Provider Cache</button
+        disabled={!selectedProvider}>{$LL.tables.priceCodeSearch.clearProviderCache()}</button
       >
     </div>
   </svelte:fragment>

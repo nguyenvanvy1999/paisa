@@ -1,5 +1,6 @@
 <script lang="ts">
   import { formatCurrency, formatFloat, type CapitalGain, type FYCapitalGain } from "$lib/utils";
+  import { LL } from "$lib/i18n/i18n-svelte";
   import _ from "lodash";
   import CapitalGainDetailCard from "./CapitalGainDetailCard.svelte";
   import Toggleable from "./Toggleable.svelte";
@@ -32,37 +33,37 @@
             <table class="table is-narrow is-fullwidth is-hoverable">
               <tbody>
                 <tr>
-                  <td>Withdrawn</td>
+                  <td>{$LL.tables.capitalGains.summary.withdrawn()}</td>
                   <td class="has-text-right has-text-weight-bold"
                     >{formatCurrency(total["withdrawn"])}</td
                   >
                 </tr>
                 <tr>
-                  <td>Gain</td>
+                  <td>{$LL.tables.capitalGains.summary.gain()}</td>
                   <td class="has-text-right has-text-weight-bold"
                     >{formatCurrency(total["gain"])}</td
                   >
                 </tr>
                 <tr>
-                  <td>Taxable Gain</td>
+                  <td>{$LL.tables.capitalGains.summary.taxableGain()}</td>
                   <td class="has-text-right has-text-weight-bold"
                     >{formatCurrency(total["taxableGain"])}</td
                   >
                 </tr>
                 <tr>
-                  <td>Short Term Tax</td>
+                  <td>{$LL.tables.capitalGains.summary.shortTermTax()}</td>
                   <td class="has-text-right has-text-weight-bold"
                     >{formatCurrency(total["shortTermTax"])}</td
                   >
                 </tr>
                 <tr>
-                  <td>Long Term Tax</td>
+                  <td>{$LL.tables.capitalGains.summary.longTermTax()}</td>
                   <td class="has-text-right has-text-weight-bold"
                     >{formatCurrency(total["longTermTax"])}</td
                   >
                 </tr>
                 <tr>
-                  <td>Taxable at Slab Rate</td>
+                  <td>{$LL.tables.capitalGains.summary.taxableAtSlabRate()}</td>
                   <td class="has-text-right has-text-weight-bold"
                     >{formatCurrency(total["slab"])}</td
                   >
@@ -75,18 +76,24 @@
               <thead>
                 <tr>
                   <th />
-                  <th>Account</th>
-                  <th>Tax Category</th>
-                  <th class="has-text-right">Sold Units</th>
-                  <th class="has-text-right">Purchase Price</th>
-                  <th class="has-text-right">Average Purchase Unit Price</th>
-                  <th class="has-text-right">Sell Price</th>
-                  <th class="has-text-right">Average Sell Unit Price</th>
-                  <th class="has-text-right">Gain</th>
-                  <th class="has-text-right">Taxable Gain</th>
-                  <th class="has-text-right">Short Term Tax</th>
-                  <th class="has-text-right">Long Term Tax</th>
-                  <th class="has-text-right">Taxable at Slat Rate</th>
+                  <th>{$LL.tables.capitalGains.columns.account()}</th>
+                  <th>{$LL.tables.capitalGains.columns.taxCategory()}</th>
+                  <th class="has-text-right">{$LL.tables.capitalGains.columns.soldUnits()}</th>
+                  <th class="has-text-right">{$LL.tables.capitalGains.columns.purchasePrice()}</th>
+                  <th class="has-text-right"
+                    >{$LL.tables.capitalGains.columns.averagePurchaseUnitPrice()}</th
+                  >
+                  <th class="has-text-right">{$LL.tables.capitalGains.columns.sellPrice()}</th>
+                  <th class="has-text-right"
+                    >{$LL.tables.capitalGains.columns.averageSellUnitPrice()}</th
+                  >
+                  <th class="has-text-right">{$LL.tables.capitalGains.columns.gain()}</th>
+                  <th class="has-text-right">{$LL.tables.capitalGains.columns.taxableGain()}</th>
+                  <th class="has-text-right">{$LL.tables.capitalGains.columns.shortTermTax()}</th>
+                  <th class="has-text-right">{$LL.tables.capitalGains.columns.longTermTax()}</th>
+                  <th class="has-text-right"
+                    >{$LL.tables.capitalGains.columns.taxableAtSlabRate()}</th
+                  >
                 </tr>
               </thead>
               <tbody>

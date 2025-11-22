@@ -1,5 +1,6 @@
 <script lang="ts">
   import { formatCurrency, type FYCapitalGain } from "$lib/utils";
+  import { LL } from "$lib/i18n/i18n-svelte";
   const DATE_FORMAT = "DD MMM YYYY";
 
   export let fyCapitalGain: FYCapitalGain;
@@ -9,15 +10,15 @@
   <table class="table is-narrow is-fullwidth is-bordered">
     <thead>
       <tr>
-        <th>Purchase Date</th>
-        <th class="has-text-right">Purchase Price</th>
-        <th>Sell Date</th>
-        <th class="has-text-right">Sell Price</th>
-        <th class="has-text-right">Gain</th>
-        <th class="has-text-right">Taxable Gain</th>
-        <th class="has-text-right">Short Term Tax</th>
-        <th class="has-text-right">Long Term Tax</th>
-        <th class="has-text-right">Taxable at Slab Rate</th>
+        <th>{$LL.tables.capitalGains.detail.purchaseDate()}</th>
+        <th class="has-text-right">{$LL.tables.capitalGains.detail.purchasePrice()}</th>
+        <th>{$LL.tables.capitalGains.detail.sellDate()}</th>
+        <th class="has-text-right">{$LL.tables.capitalGains.detail.sellPrice()}</th>
+        <th class="has-text-right">{$LL.tables.capitalGains.detail.gain()}</th>
+        <th class="has-text-right">{$LL.tables.capitalGains.detail.taxableGain()}</th>
+        <th class="has-text-right">{$LL.tables.capitalGains.detail.shortTermTax()}</th>
+        <th class="has-text-right">{$LL.tables.capitalGains.detail.longTermTax()}</th>
+        <th class="has-text-right">{$LL.tables.capitalGains.detail.taxableAtSlabRate()}</th>
       </tr>
     </thead>
     <tbody>

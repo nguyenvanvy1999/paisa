@@ -2,6 +2,7 @@
   import _ from "lodash";
   import { createEventDispatcher } from "svelte";
   import Select from "svelte-select";
+  import { LL } from "$lib/i18n/i18n-svelte";
 
   export let accounts: string[];
 
@@ -11,8 +12,8 @@
 
   let selectedItem: { id: string; name: string };
 
-  const OPERATIONS = [{ id: "rename_account", label: "Rename Account" }];
-  let selectedOperation = OPERATIONS[0].id;
+  const OPERATIONS = [{ id: "rename_account", label: $LL.tables.bulkEdit.renameAccount() }];
+  let selectedOperation = "rename_account";
 
   let args = { oldAccountName: "", newAccountName: "" };
 
@@ -37,7 +38,7 @@
         items={selectItems}
         label="name"
         itemId="id"
-        placeholder="Old Account name"
+        placeholder={$LL.tables.bulkEdit.oldAccountName()}
         searchable={true}
         clearable={false}
         on:change={(_e) => {
@@ -50,7 +51,7 @@
         bind:value={args.newAccountName}
         class="input"
         type="text"
-        placeholder="New Account name"
+        placeholder={$LL.tables.bulkEdit.newAccountName()}
       />
     </div>
   {/if}
@@ -58,7 +59,7 @@
     <a
       class="button is-link"
       on:click={(_e) => dispatch("preview", { operation: selectedOperation, args: args })}
-      >Preview</a
+      >{$LL.tables.bulkEdit.preview()}</a
     >
   </p>
 </div>

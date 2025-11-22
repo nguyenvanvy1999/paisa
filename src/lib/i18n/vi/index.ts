@@ -237,6 +237,61 @@ const vi: Translation = {
         amount: "Số tiền"
       },
       asOn: "Schedule AL tính đến ngày"
+    },
+    capitalGains: {
+      summary: {
+        withdrawn: "Đã rút",
+        gain: "Lợi nhuận",
+        taxableGain: "Lợi nhuận chịu thuế",
+        shortTermTax: "Thuế ngắn hạn",
+        longTermTax: "Thuế dài hạn",
+        taxableAtSlabRate: "Chịu thuế theo bậc"
+      },
+      columns: {
+        account: "Tài khoản",
+        taxCategory: "Danh mục thuế",
+        soldUnits: "Đơn vị đã bán",
+        purchasePrice: "Giá mua",
+        averagePurchaseUnitPrice: "Giá mua trung bình/đơn vị",
+        sellPrice: "Giá bán",
+        averageSellUnitPrice: "Giá bán trung bình/đơn vị",
+        gain: "Lợi nhuận",
+        taxableGain: "Lợi nhuận chịu thuế",
+        shortTermTax: "Thuế ngắn hạn",
+        longTermTax: "Thuế dài hạn",
+        taxableAtSlabRate: "Chịu thuế theo bậc"
+      },
+      detail: {
+        purchaseDate: "Ngày mua",
+        purchasePrice: "Giá mua",
+        sellDate: "Ngày bán",
+        sellPrice: "Giá bán",
+        gain: "Lợi nhuận",
+        taxableGain: "Lợi nhuận chịu thuế",
+        shortTermTax: "Thuế ngắn hạn",
+        longTermTax: "Thuế dài hạn",
+        taxableAtSlabRate: "Chịu thuế theo bậc"
+      }
+    },
+    priceCodeSearch: {
+      title: "Chọn nhà cung cấp giá",
+      provider: "Nhà cung cấp",
+      select: "Chọn",
+      cancel: "Hủy",
+      clearProviderCache: "Xóa bộ nhớ đệm nhà cung cấp"
+    },
+    bulkEdit: {
+      renameAccount: "Đổi tên tài khoản",
+      oldAccountName: "Tên tài khoản cũ",
+      newAccountName: "Tên tài khoản mới",
+      preview: "Xem trước"
+    },
+    dateRange: {
+      all: "Tất cả",
+      tenYears: "10 năm",
+      fiveYears: "5 năm",
+      threeYears: "3 năm",
+      oneYear: "1 năm"
     }
   }
 };

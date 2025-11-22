@@ -238,6 +238,61 @@ const en: BaseTranslation = {
         amount: "Amount"
       },
       asOn: "Schedule AL as on"
+    },
+    capitalGains: {
+      summary: {
+        withdrawn: "Withdrawn",
+        gain: "Gain",
+        taxableGain: "Taxable Gain",
+        shortTermTax: "Short Term Tax",
+        longTermTax: "Long Term Tax",
+        taxableAtSlabRate: "Taxable at Slab Rate"
+      },
+      columns: {
+        account: "Account",
+        taxCategory: "Tax Category",
+        soldUnits: "Sold Units",
+        purchasePrice: "Purchase Price",
+        averagePurchaseUnitPrice: "Average Purchase Unit Price",
+        sellPrice: "Sell Price",
+        averageSellUnitPrice: "Average Sell Unit Price",
+        gain: "Gain",
+        taxableGain: "Taxable Gain",
+        shortTermTax: "Short Term Tax",
+        longTermTax: "Long Term Tax",
+        taxableAtSlabRate: "Taxable at Slab Rate"
+      },
+      detail: {
+        purchaseDate: "Purchase Date",
+        purchasePrice: "Purchase Price",
+        sellDate: "Sell Date",
+        sellPrice: "Sell Price",
+        gain: "Gain",
+        taxableGain: "Taxable Gain",
+        shortTermTax: "Short Term Tax",
+        longTermTax: "Long Term Tax",
+        taxableAtSlabRate: "Taxable at Slab Rate"
+      }
+    },
+    priceCodeSearch: {
+      title: "Choose Price Provider",
+      provider: "Provider",
+      select: "Select",
+      cancel: "Cancel",
+      clearProviderCache: "Clear Provider Cache"
+    },
+    bulkEdit: {
+      renameAccount: "Rename Account",
+      oldAccountName: "Old Account name",
+      newAccountName: "New Account name",
+      preview: "Preview"
+    },
+    dateRange: {
+      all: "All",
+      tenYears: "10 years",
+      fiveYears: "5 years",
+      threeYears: "3 years",
+      oneYear: "1 year"
     }
   }
 };

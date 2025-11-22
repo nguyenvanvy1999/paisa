@@ -753,6 +753,184 @@ type RootTranslation = {
        */
       asOn: string;
     };
+    capitalGains: {
+      summary: {
+        /**
+         * W​i​t​h​d​r​a​w​n
+         */
+        withdrawn: string;
+        /**
+         * G​a​i​n
+         */
+        gain: string;
+        /**
+         * T​a​x​a​b​l​e​ ​G​a​i​n
+         */
+        taxableGain: string;
+        /**
+         * S​h​o​r​t​ ​T​e​r​m​ ​T​a​x
+         */
+        shortTermTax: string;
+        /**
+         * L​o​n​g​ ​T​e​r​m​ ​T​a​x
+         */
+        longTermTax: string;
+        /**
+         * T​a​x​a​b​l​e​ ​a​t​ ​S​l​a​b​ ​R​a​t​e
+         */
+        taxableAtSlabRate: string;
+      };
+      columns: {
+        /**
+         * A​c​c​o​u​n​t
+         */
+        account: string;
+        /**
+         * T​a​x​ ​C​a​t​e​g​o​r​y
+         */
+        taxCategory: string;
+        /**
+         * S​o​l​d​ ​U​n​i​t​s
+         */
+        soldUnits: string;
+        /**
+         * P​u​r​c​h​a​s​e​ ​P​r​i​c​e
+         */
+        purchasePrice: string;
+        /**
+         * A​v​e​r​a​g​e​ ​P​u​r​c​h​a​s​e​ ​U​n​i​t​ ​P​r​i​c​e
+         */
+        averagePurchaseUnitPrice: string;
+        /**
+         * S​e​l​l​ ​P​r​i​c​e
+         */
+        sellPrice: string;
+        /**
+         * A​v​e​r​a​g​e​ ​S​e​l​l​ ​U​n​i​t​ ​P​r​i​c​e
+         */
+        averageSellUnitPrice: string;
+        /**
+         * G​a​i​n
+         */
+        gain: string;
+        /**
+         * T​a​x​a​b​l​e​ ​G​a​i​n
+         */
+        taxableGain: string;
+        /**
+         * S​h​o​r​t​ ​T​e​r​m​ ​T​a​x
+         */
+        shortTermTax: string;
+        /**
+         * L​o​n​g​ ​T​e​r​m​ ​T​a​x
+         */
+        longTermTax: string;
+        /**
+         * T​a​x​a​b​l​e​ ​a​t​ ​S​l​a​b​ ​R​a​t​e
+         */
+        taxableAtSlabRate: string;
+      };
+      detail: {
+        /**
+         * P​u​r​c​h​a​s​e​ ​D​a​t​e
+         */
+        purchaseDate: string;
+        /**
+         * P​u​r​c​h​a​s​e​ ​P​r​i​c​e
+         */
+        purchasePrice: string;
+        /**
+         * S​e​l​l​ ​D​a​t​e
+         */
+        sellDate: string;
+        /**
+         * S​e​l​l​ ​P​r​i​c​e
+         */
+        sellPrice: string;
+        /**
+         * G​a​i​n
+         */
+        gain: string;
+        /**
+         * T​a​x​a​b​l​e​ ​G​a​i​n
+         */
+        taxableGain: string;
+        /**
+         * S​h​o​r​t​ ​T​e​r​m​ ​T​a​x
+         */
+        shortTermTax: string;
+        /**
+         * L​o​n​g​ ​T​e​r​m​ ​T​a​x
+         */
+        longTermTax: string;
+        /**
+         * T​a​x​a​b​l​e​ ​a​t​ ​S​l​a​b​ ​R​a​t​e
+         */
+        taxableAtSlabRate: string;
+      };
+    };
+    priceCodeSearch: {
+      /**
+       * C​h​o​o​s​e​ ​P​r​i​c​e​ ​P​r​o​v​i​d​e​r
+       */
+      title: string;
+      /**
+       * P​r​o​v​i​d​e​r
+       */
+      provider: string;
+      /**
+       * S​e​l​e​c​t
+       */
+      select: string;
+      /**
+       * C​a​n​c​e​l
+       */
+      cancel: string;
+      /**
+       * C​l​e​a​r​ ​P​r​o​v​i​d​e​r​ ​C​a​c​h​e
+       */
+      clearProviderCache: string;
+    };
+    bulkEdit: {
+      /**
+       * R​e​n​a​m​e​ ​A​c​c​o​u​n​t
+       */
+      renameAccount: string;
+      /**
+       * O​l​d​ ​A​c​c​o​u​n​t​ ​n​a​m​e
+       */
+      oldAccountName: string;
+      /**
+       * N​e​w​ ​A​c​c​o​u​n​t​ ​n​a​m​e
+       */
+      newAccountName: string;
+      /**
+       * P​r​e​v​i​e​w
+       */
+      preview: string;
+    };
+    dateRange: {
+      /**
+       * A​l​l
+       */
+      all: string;
+      /**
+       * 1​0​ ​y​e​a​r​s
+       */
+      tenYears: string;
+      /**
+       * 5​ ​y​e​a​r​s
+       */
+      fiveYears: string;
+      /**
+       * 3​ ​y​e​a​r​s
+       */
+      threeYears: string;
+      /**
+       * 1​ ​y​e​a​r
+       */
+      oneYear: string;
+    };
   };
 };
 
@@ -1497,6 +1675,184 @@ export type TranslationFunctions = {
        * Schedule AL as on
        */
       asOn: () => LocalizedString;
+    };
+    capitalGains: {
+      summary: {
+        /**
+         * Withdrawn
+         */
+        withdrawn: () => LocalizedString;
+        /**
+         * Gain
+         */
+        gain: () => LocalizedString;
+        /**
+         * Taxable Gain
+         */
+        taxableGain: () => LocalizedString;
+        /**
+         * Short Term Tax
+         */
+        shortTermTax: () => LocalizedString;
+        /**
+         * Long Term Tax
+         */
+        longTermTax: () => LocalizedString;
+        /**
+         * Taxable at Slab Rate
+         */
+        taxableAtSlabRate: () => LocalizedString;
+      };
+      columns: {
+        /**
+         * Account
+         */
+        account: () => LocalizedString;
+        /**
+         * Tax Category
+         */
+        taxCategory: () => LocalizedString;
+        /**
+         * Sold Units
+         */
+        soldUnits: () => LocalizedString;
+        /**
+         * Purchase Price
+         */
+        purchasePrice: () => LocalizedString;
+        /**
+         * Average Purchase Unit Price
+         */
+        averagePurchaseUnitPrice: () => LocalizedString;
+        /**
+         * Sell Price
+         */
+        sellPrice: () => LocalizedString;
+        /**
+         * Average Sell Unit Price
+         */
+        averageSellUnitPrice: () => LocalizedString;
+        /**
+         * Gain
+         */
+        gain: () => LocalizedString;
+        /**
+         * Taxable Gain
+         */
+        taxableGain: () => LocalizedString;
+        /**
+         * Short Term Tax
+         */
+        shortTermTax: () => LocalizedString;
+        /**
+         * Long Term Tax
+         */
+        longTermTax: () => LocalizedString;
+        /**
+         * Taxable at Slab Rate
+         */
+        taxableAtSlabRate: () => LocalizedString;
+      };
+      detail: {
+        /**
+         * Purchase Date
+         */
+        purchaseDate: () => LocalizedString;
+        /**
+         * Purchase Price
+         */
+        purchasePrice: () => LocalizedString;
+        /**
+         * Sell Date
+         */
+        sellDate: () => LocalizedString;
+        /**
+         * Sell Price
+         */
+        sellPrice: () => LocalizedString;
+        /**
+         * Gain
+         */
+        gain: () => LocalizedString;
+        /**
+         * Taxable Gain
+         */
+        taxableGain: () => LocalizedString;
+        /**
+         * Short Term Tax
+         */
+        shortTermTax: () => LocalizedString;
+        /**
+         * Long Term Tax
+         */
+        longTermTax: () => LocalizedString;
+        /**
+         * Taxable at Slab Rate
+         */
+        taxableAtSlabRate: () => LocalizedString;
+      };
+    };
+    priceCodeSearch: {
+      /**
+       * Choose Price Provider
+       */
+      title: () => LocalizedString;
+      /**
+       * Provider
+       */
+      provider: () => LocalizedString;
+      /**
+       * Select
+       */
+      select: () => LocalizedString;
+      /**
+       * Cancel
+       */
+      cancel: () => LocalizedString;
+      /**
+       * Clear Provider Cache
+       */
+      clearProviderCache: () => LocalizedString;
+    };
+    bulkEdit: {
+      /**
+       * Rename Account
+       */
+      renameAccount: () => LocalizedString;
+      /**
+       * Old Account name
+       */
+      oldAccountName: () => LocalizedString;
+      /**
+       * New Account name
+       */
+      newAccountName: () => LocalizedString;
+      /**
+       * Preview
+       */
+      preview: () => LocalizedString;
+    };
+    dateRange: {
+      /**
+       * All
+       */
+      all: () => LocalizedString;
+      /**
+       * 10 years
+       */
+      tenYears: () => LocalizedString;
+      /**
+       * 5 years
+       */
+      fiveYears: () => LocalizedString;
+      /**
+       * 3 years
+       */
+      threeYears: () => LocalizedString;
+      /**
+       * 1 year
+       */
+      oneYear: () => LocalizedString;
     };
   };
 };
