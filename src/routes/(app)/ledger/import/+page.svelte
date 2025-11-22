@@ -18,6 +18,7 @@
   import * as toast from "bulma-toast";
   import FileModal from "$lib/components/FileModal.svelte";
   import Modal from "$lib/components/Modal.svelte";
+  import LL from "$lib/i18n/i18n-svelte";
 
   let templates: ImportTemplate[] = [];
   let selectedTemplate: ImportTemplate;
@@ -61,7 +62,7 @@
 
     if (!saved) {
       toast.toast({
-        message: `Failed to save ${saveAsName}. reason: ${message}`,
+        message: $LL.import.failedToSave({ name: saveAsName, reason: message }),
         type: "is-danger",
         duration: 10000
       });
@@ -72,7 +73,7 @@
     selectedTemplate = _.find(templates, { id: template.id });
     saveAsName = selectedTemplate.name;
     toast.toast({
-      message: `Saved ${saveAsName}`,
+      message: $LL.import.saved({ name: saveAsName }),
       type: "is-success"
     });
 
@@ -81,7 +82,7 @@
 
   async function remove() {
     const oldName = selectedTemplate.name;
-    const confirmed = confirm(`Are you sure you want to delete ${oldName} template?`);
+    const confirmed = confirm($LL.import.deleteConfirm({ name: oldName }));
     if (!confirmed) {
       return;
     }
@@ -95,7 +96,7 @@
 
     if (!success) {
       toast.toast({
-        message: `Failed to remove ${oldName}. reason: ${message}`,
+        message: $LL.import.failedToRemove({ name: oldName, reason: message }),
         type: "is-danger",
         duration: 10000
       });
@@ -106,7 +107,7 @@
     selectedTemplate = templates[0];
     saveAsName = selectedTemplate.name;
     toast.toast({
-      message: `Removed ${oldName}`,
+      message: $LL.import.removed({ name: oldName }),
       type: "is-success"
     });
 

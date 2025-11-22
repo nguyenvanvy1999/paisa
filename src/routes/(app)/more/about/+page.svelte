@@ -1,5 +1,6 @@
 <script lang="ts">
   import Logo from "$lib/components/Logo.svelte";
+  import LL from "$lib/i18n/i18n-svelte";
   const links = [
     { name: "Chat", href: "https://matrix.to/#/#paisa:matrix.org", icon: "fa-solid fa-headset" },
     { name: "Issue", href: "https://github.com/ananthakumaran/paisa/issues", icon: "fas fa-bug" },
@@ -43,12 +44,12 @@
           <div><Logo size={128} /></div>
           <div class="is-size-3 is-primary-color">Paisa</div>
           <div>
-            Version: <b>0.7.4</b>
+            {$LL.about.version()}: <b>0.7.4</b>
           </div>
         </div>
 
         <div class="box px-3 mx-auto" style="max-width: 400px;">
-          <h3 class="is-size-5 mb-1">Links</h3>
+          <h3 class="is-size-5 mb-1">{$LL.about.links()}</h3>
           <ul>
             {#each links as link}
               <li>

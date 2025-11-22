@@ -320,6 +320,66 @@ const vi: Translation = {
     invalidSyntax: "Cú pháp không hợp lệ",
     invalidDate: "Ngày không hợp lệ",
     cannotUseWith: "{property} không thể sử dụng với {operator} và {type}"
+  },
+  dashboard: {
+    emptyState: {
+      title: "Có vẻ như bạn mới ở đây, bạn có thể bắt đầu hoặc xem demo",
+      getStarted: {
+        title: "Tôi muốn bắt đầu",
+        step1: "Đi đến trang cấu hình và thiết lập tiền tệ và ngôn ngữ mặc định.",
+        step2: "Đi đến trang trình sửa và bắt đầu thêm giao dịch vào sổ cái.",
+        configLink: "cấu hình",
+        editorLink: "trình sửa"
+      },
+      viewDemo: {
+        title: "Tôi muốn xem Demo",
+        step1:
+          "Nhấn nút bên dưới để tải demo. Điều này sẽ tải một sổ cái demo với cấu hình liên quan.",
+        step2:
+          "Sau khi bạn xong, bạn có thể đi đến trang trình sửa và chọn tất cả nội dung và xóa chúng.",
+        step3: "Đi đến trang cấu hình và nhấn nút đặt lại về mặc định.",
+        editorLink: "trình sửa",
+        configLink: "cấu hình"
+      },
+      setupDemo: "Thiết lập Demo"
+    },
+    assets: {
+      netWorth: "Giá trị ròng",
+      netInvestment: "Đầu tư ròng",
+      gainLoss: "Lãi / Lỗ",
+      checkingBalance: "Số dư tài khoản"
+    },
+    cashFlow: {
+      emptyState: "Ối! Bạn chưa thực hiện giao dịch nào trong 3 tháng qua."
+    },
+    expenses: {
+      emptyState: "Tuyệt vời! Bạn không có chi tiêu nào trong tháng này."
+    },
+    recentTransactions: "Giao dịch gần đây"
+  },
+  config: {
+    warning:
+      "Giá <b>không</b> được tự động cập nhật sau khi thay đổi cấu hình. Sử dụng menu ở góc trên bên phải để cập nhật giá. Nếu sổ cái không đồng bộ do bất kỳ vấn đề nào, hãy sửa các vấn đề và sử dụng menu để đồng bộ lại.",
+    save: "Lưu",
+    cancel: "Hủy",
+    resetToDefaults: "Đặt lại về Mặc định",
+    resetConfirm:
+      "Bạn có chắc chắn muốn đặt lại cấu hình về mặc định? Hành động này không thể hoàn tác.",
+    saved: "Đã lưu cấu hình"
+  },
+  about: {
+    version: "Phiên bản",
+    links: "Liên kết"
+  },
+  import: {
+    failedToSave: "Không thể lưu {name}. lý do: {reason}",
+    saved: "Đã lưu {name}",
+    deleteConfirm: "Bạn có chắc chắn muốn xóa mẫu {name}?",
+    failedToRemove: "Không thể xóa {name}. lý do: {reason}",
+    removed: "Đã xóa {name}"
+  },
+  price: {
+    cacheCleared: "Đã xóa bộ nhớ đệm giá."
   }
 };
 

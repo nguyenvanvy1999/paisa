@@ -37,7 +37,7 @@
       });
     } else {
       toast({
-        message: "Price cache cleared.",
+        message: $LL.price.cacheCleared(),
         type: "is-success"
       });
     }

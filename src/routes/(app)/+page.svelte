@@ -32,6 +32,7 @@
   import GoalSummaryCard from "$lib/components/GoalSummaryCard.svelte";
   import LegendCard from "$lib/components/LegendCard.svelte";
   import BalanceCard from "$lib/components/BalanceCard.svelte";
+  import LL from "$lib/i18n/i18n-svelte";
 
   let UntypedMasonryGrid = MasonryGrid as any;
 
@@ -111,38 +112,41 @@
         <ZeroState item={!isEmpty}>
           <div class="has-text-left" style="max-width: 640px;">
             <p class="mb-2">
-              Looks like you are new here, you can either get started or look at a demo setup
+              {$LL.dashboard.emptyState.title()}
             </p>
             <div>
-              <p class="is-size-4">I want to get started</p>
+              <p class="is-size-4">{$LL.dashboard.emptyState.getStarted.title()}</p>
               <ol class="ml-5 mt-2 mb-4">
                 <li>
-                  Go to <a href="/more/config">configuration</a> page and set your default currency and
-                  locale.
+                  Go to <a href="/more/config">{$LL.dashboard.emptyState.getStarted.configLink()}</a
+                  > page and set your default currency and locale.
                 </li>
                 <li>
-                  Go to <a href="/ledger/editor">editor</a> page and start adding transactions to your
-                  journal.
+                  Go to <a href="/ledger/editor"
+                    >{$LL.dashboard.emptyState.getStarted.editorLink()}</a
+                  > page and start adding transactions to your journal.
                 </li>
               </ol>
-              <p class="is-size-4">I want to view a Demo</p>
+              <p class="is-size-4">{$LL.dashboard.emptyState.viewDemo.title()}</p>
               <p class="ml-3"></p>
               <ol class="ml-5 mt-2 mb-4">
                 <li>
-                  Click the button below to load a demo setup. This will load a demo journal with
-                  relevant config.
+                  {$LL.dashboard.emptyState.viewDemo.step1()}
                 </li>
                 <li>
-                  Once you are done playing around, you can go to <a href="/ledger/editor">editor</a
+                  Once you are done playing around, you can go to <a href="/ledger/editor"
+                    >{$LL.dashboard.emptyState.viewDemo.editorLink()}</a
                   > page and select all the content and delete them.
                 </li>
                 <li>
-                  Go to <a href="/more/config">configuration</a> page and click the reset to defaults
-                  button.
+                  Go to <a href="/more/config">{$LL.dashboard.emptyState.viewDemo.configLink()}</a> page
+                  and click the reset to defaults button.
                 </li>
               </ol>
 
-              <a on:click={(_e) => initDemo()} class="button is-link">Setup Demo</a>
+              <a on:click={(_e) => initDemo()} class="button is-link"
+                >{$LL.dashboard.emptyState.setupDemo()}</a
+              >
             </div>
           </div>
         </ZeroState>
@@ -167,14 +171,14 @@
                     <nav class="level grid-2">
                       <LevelItem
                         narrow
-                        title="Net worth"
+                        title={$LL.dashboard.assets.netWorth()}
                         color={COLORS.primary}
                         value={formatCurrency(networth.balanceAmount)}
                       />
 
                       <LevelItem
                         narrow
-                        title="Net Investment"
+                        title={$LL.dashboard.assets.netInvestment()}
                         color={COLORS.secondary}
                         value={formatCurrency(networth.netInvestmentAmount)}
                       />
@@ -182,7 +186,7 @@
                     <nav class="level grid-2">
                       <LevelItem
                         narrow
-                        title="Gain / Loss"
+                        title={$LL.dashboard.assets.gainLoss()}
                         color={networth.gainAmount >= 0 ? COLORS.gainText : COLORS.lossText}
                         value={formatCurrency(networth.gainAmount)}
                       />
@@ -201,7 +205,8 @@
             <article class="tile is-child">
               <div class="content">
                 <p class="subtitle">
-                  <a class="secondary-link has-text-grey" href="/assets/balance">Checking Balance</a
+                  <a class="secondary-link has-text-grey" href="/assets/balance"
+                    >{$LL.dashboard.assets.checkingBalance()}</a
                   >
                 </p>
                 <div class="content">
@@ -225,7 +230,7 @@
             </p>
             <div class="content box px-2 pb-0">
               <ZeroState item={cashFlows}>
-                <strong>Oops!</strong> You have not made any transactions in the last 3 months.
+                <strong>{$LL.dashboard.cashFlow.emptyState()}</strong>
               </ZeroState>
 
               <LegendCard legends={cashflowLegends} clazz="mb-2 overflow-x-auto" />
@@ -290,7 +295,7 @@
             </p>
             <div class="content box px-3">
               <ZeroState item={selectedExpenses}>
-                <strong>Hurray!</strong> You have no expenses this month.
+                <strong>{$LL.dashboard.expenses.emptyState()}</strong>
               </ZeroState>
               <svg id="d3-current-month-breakdown" width="100%" />
             </div>
@@ -327,7 +332,7 @@
                 <div class="content">
                   <p class="subtitle">
                     <a class="secondary-link has-text-grey" href="/ledger/transaction"
-                      >Recent Transactions</a
+                      >{$LL.dashboard.recentTransactions()}</a
                     >
                   </p>
                   <div>

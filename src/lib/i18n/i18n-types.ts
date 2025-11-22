@@ -1019,6 +1019,171 @@ type RootTranslation = {
      */
     cannotUseWith: RequiredParams<"operator" | "property" | "type">;
   };
+  dashboard: {
+    emptyState: {
+      /**
+       * L​o​o​k​s​ ​l​i​k​e​ ​y​o​u​ ​a​r​e​ ​n​e​w​ ​h​e​r​e​,​ ​y​o​u​ ​c​a​n​ ​e​i​t​h​e​r​ ​g​e​t​ ​s​t​a​r​t​e​d​ ​o​r​ ​l​o​o​k​ ​a​t​ ​a​ ​d​e​m​o​ ​s​e​t​u​p
+       */
+      title: string;
+      getStarted: {
+        /**
+         * I​ ​w​a​n​t​ ​t​o​ ​g​e​t​ ​s​t​a​r​t​e​d
+         */
+        title: string;
+        /**
+         * G​o​ ​t​o​ ​c​o​n​f​i​g​u​r​a​t​i​o​n​ ​p​a​g​e​ ​a​n​d​ ​s​e​t​ ​y​o​u​r​ ​d​e​f​a​u​l​t​ ​c​u​r​r​e​n​c​y​ ​a​n​d​ ​l​o​c​a​l​e​.
+         */
+        step1: string;
+        /**
+         * G​o​ ​t​o​ ​e​d​i​t​o​r​ ​p​a​g​e​ ​a​n​d​ ​s​t​a​r​t​ ​a​d​d​i​n​g​ ​t​r​a​n​s​a​c​t​i​o​n​s​ ​t​o​ ​y​o​u​r​ ​j​o​u​r​n​a​l​.
+         */
+        step2: string;
+        /**
+         * c​o​n​f​i​g​u​r​a​t​i​o​n
+         */
+        configLink: string;
+        /**
+         * e​d​i​t​o​r
+         */
+        editorLink: string;
+      };
+      viewDemo: {
+        /**
+         * I​ ​w​a​n​t​ ​t​o​ ​v​i​e​w​ ​a​ ​D​e​m​o
+         */
+        title: string;
+        /**
+         * C​l​i​c​k​ ​t​h​e​ ​b​u​t​t​o​n​ ​b​e​l​o​w​ ​t​o​ ​l​o​a​d​ ​a​ ​d​e​m​o​ ​s​e​t​u​p​.​ ​T​h​i​s​ ​w​i​l​l​ ​l​o​a​d​ ​a​ ​d​e​m​o​ ​j​o​u​r​n​a​l​ ​w​i​t​h​ ​r​e​l​e​v​a​n​t​ ​c​o​n​f​i​g​.
+         */
+        step1: string;
+        /**
+         * O​n​c​e​ ​y​o​u​ ​a​r​e​ ​d​o​n​e​ ​p​l​a​y​i​n​g​ ​a​r​o​u​n​d​,​ ​y​o​u​ ​c​a​n​ ​g​o​ ​t​o​ ​e​d​i​t​o​r​ ​p​a​g​e​ ​a​n​d​ ​s​e​l​e​c​t​ ​a​l​l​ ​t​h​e​ ​c​o​n​t​e​n​t​ ​a​n​d​ ​d​e​l​e​t​e​ ​t​h​e​m​.
+         */
+        step2: string;
+        /**
+         * G​o​ ​t​o​ ​c​o​n​f​i​g​u​r​a​t​i​o​n​ ​p​a​g​e​ ​a​n​d​ ​c​l​i​c​k​ ​t​h​e​ ​r​e​s​e​t​ ​t​o​ ​d​e​f​a​u​l​t​s​ ​b​u​t​t​o​n​.
+         */
+        step3: string;
+        /**
+         * e​d​i​t​o​r
+         */
+        editorLink: string;
+        /**
+         * c​o​n​f​i​g​u​r​a​t​i​o​n
+         */
+        configLink: string;
+      };
+      /**
+       * S​e​t​u​p​ ​D​e​m​o
+       */
+      setupDemo: string;
+    };
+    assets: {
+      /**
+       * N​e​t​ ​w​o​r​t​h
+       */
+      netWorth: string;
+      /**
+       * N​e​t​ ​I​n​v​e​s​t​m​e​n​t
+       */
+      netInvestment: string;
+      /**
+       * G​a​i​n​ ​/​ ​L​o​s​s
+       */
+      gainLoss: string;
+      /**
+       * C​h​e​c​k​i​n​g​ ​B​a​l​a​n​c​e
+       */
+      checkingBalance: string;
+    };
+    cashFlow: {
+      /**
+       * O​o​p​s​!​ ​Y​o​u​ ​h​a​v​e​ ​n​o​t​ ​m​a​d​e​ ​a​n​y​ ​t​r​a​n​s​a​c​t​i​o​n​s​ ​i​n​ ​t​h​e​ ​l​a​s​t​ ​3​ ​m​o​n​t​h​s​.
+       */
+      emptyState: string;
+    };
+    expenses: {
+      /**
+       * H​u​r​r​a​y​!​ ​Y​o​u​ ​h​a​v​e​ ​n​o​ ​e​x​p​e​n​s​e​s​ ​t​h​i​s​ ​m​o​n​t​h​.
+       */
+      emptyState: string;
+    };
+    /**
+     * R​e​c​e​n​t​ ​T​r​a​n​s​a​c​t​i​o​n​s
+     */
+    recentTransactions: string;
+  };
+  config: {
+    /**
+     * P​r​i​c​e​s​ ​a​r​e​ ​<​b​>​n​o​t​<​/​b​>​ ​a​u​t​o​m​a​t​i​c​a​l​l​y​ ​u​p​d​a​t​e​d​ ​a​f​t​e​r​ ​c​o​n​f​i​g​ ​c​h​a​n​g​e​.​ ​U​s​e​ ​t​h​e​ ​m​e​n​u​ ​a​t​ ​t​h​e​ ​t​o​p​ ​r​i​g​h​t​ ​c​o​r​n​e​r​ ​t​o​ ​u​p​d​a​t​e​ ​p​r​i​c​e​s​.​ ​I​f​ ​t​h​e​ ​j​o​u​r​n​a​l​ ​f​a​i​l​e​d​ ​t​o​ ​s​y​n​c​ ​d​u​e​ ​t​o​ ​a​n​y​ ​i​s​s​u​e​s​,​ ​f​i​x​ ​t​h​e​ ​i​s​s​u​e​s​ ​a​n​d​ ​u​s​e​ ​t​h​e​ ​m​e​n​u​ ​t​o​ ​s​y​n​c​ ​a​g​a​i​n​.
+     */
+    warning: string;
+    /**
+     * S​a​v​e
+     */
+    save: string;
+    /**
+     * C​a​n​c​e​l
+     */
+    cancel: string;
+    /**
+     * R​e​s​e​t​ ​t​o​ ​D​e​f​a​u​l​t​s
+     */
+    resetToDefaults: string;
+    /**
+     * A​r​e​ ​y​o​u​ ​s​u​r​e​ ​y​o​u​ ​w​a​n​t​ ​t​o​ ​r​e​s​e​t​ ​t​h​e​ ​c​o​n​f​i​g​ ​t​o​ ​d​e​f​a​u​l​t​s​?​ ​T​h​i​s​ ​a​c​t​i​o​n​ ​i​s​ ​n​o​t​ ​r​e​v​e​r​s​i​b​l​e​.
+     */
+    resetConfirm: string;
+    /**
+     * S​a​v​e​d​ ​c​o​n​f​i​g
+     */
+    saved: string;
+  };
+  about: {
+    /**
+     * V​e​r​s​i​o​n
+     */
+    version: string;
+    /**
+     * L​i​n​k​s
+     */
+    links: string;
+  };
+  import: {
+    /**
+     * F​a​i​l​e​d​ ​t​o​ ​s​a​v​e​ ​{​n​a​m​e​}​.​ ​r​e​a​s​o​n​:​ ​{​r​e​a​s​o​n​}
+     * @param {unknown} name
+     * @param {unknown} reason
+     */
+    failedToSave: RequiredParams<"name" | "reason">;
+    /**
+     * S​a​v​e​d​ ​{​n​a​m​e​}
+     * @param {unknown} name
+     */
+    saved: RequiredParams<"name">;
+    /**
+     * A​r​e​ ​y​o​u​ ​s​u​r​e​ ​y​o​u​ ​w​a​n​t​ ​t​o​ ​d​e​l​e​t​e​ ​{​n​a​m​e​}​ ​t​e​m​p​l​a​t​e​?
+     * @param {unknown} name
+     */
+    deleteConfirm: RequiredParams<"name">;
+    /**
+     * F​a​i​l​e​d​ ​t​o​ ​r​e​m​o​v​e​ ​{​n​a​m​e​}​.​ ​r​e​a​s​o​n​:​ ​{​r​e​a​s​o​n​}
+     * @param {unknown} name
+     * @param {unknown} reason
+     */
+    failedToRemove: RequiredParams<"name" | "reason">;
+    /**
+     * R​e​m​o​v​e​d​ ​{​n​a​m​e​}
+     * @param {unknown} name
+     */
+    removed: RequiredParams<"name">;
+  };
+  price: {
+    /**
+     * P​r​i​c​e​ ​c​a​c​h​e​ ​c​l​e​a​r​e​d​.
+     */
+    cacheCleared: string;
+  };
 };
 
 export type TranslationFunctions = {
@@ -2023,6 +2188,164 @@ export type TranslationFunctions = {
       property: unknown;
       type: unknown;
     }) => LocalizedString;
+  };
+  dashboard: {
+    emptyState: {
+      /**
+       * Looks like you are new here, you can either get started or look at a demo setup
+       */
+      title: () => LocalizedString;
+      getStarted: {
+        /**
+         * I want to get started
+         */
+        title: () => LocalizedString;
+        /**
+         * Go to configuration page and set your default currency and locale.
+         */
+        step1: () => LocalizedString;
+        /**
+         * Go to editor page and start adding transactions to your journal.
+         */
+        step2: () => LocalizedString;
+        /**
+         * configuration
+         */
+        configLink: () => LocalizedString;
+        /**
+         * editor
+         */
+        editorLink: () => LocalizedString;
+      };
+      viewDemo: {
+        /**
+         * I want to view a Demo
+         */
+        title: () => LocalizedString;
+        /**
+         * Click the button below to load a demo setup. This will load a demo journal with relevant config.
+         */
+        step1: () => LocalizedString;
+        /**
+         * Once you are done playing around, you can go to editor page and select all the content and delete them.
+         */
+        step2: () => LocalizedString;
+        /**
+         * Go to configuration page and click the reset to defaults button.
+         */
+        step3: () => LocalizedString;
+        /**
+         * editor
+         */
+        editorLink: () => LocalizedString;
+        /**
+         * configuration
+         */
+        configLink: () => LocalizedString;
+      };
+      /**
+       * Setup Demo
+       */
+      setupDemo: () => LocalizedString;
+    };
+    assets: {
+      /**
+       * Net worth
+       */
+      netWorth: () => LocalizedString;
+      /**
+       * Net Investment
+       */
+      netInvestment: () => LocalizedString;
+      /**
+       * Gain / Loss
+       */
+      gainLoss: () => LocalizedString;
+      /**
+       * Checking Balance
+       */
+      checkingBalance: () => LocalizedString;
+    };
+    cashFlow: {
+      /**
+       * Oops! You have not made any transactions in the last 3 months.
+       */
+      emptyState: () => LocalizedString;
+    };
+    expenses: {
+      /**
+       * Hurray! You have no expenses this month.
+       */
+      emptyState: () => LocalizedString;
+    };
+    /**
+     * Recent Transactions
+     */
+    recentTransactions: () => LocalizedString;
+  };
+  config: {
+    /**
+     * Prices are <b>not</b> automatically updated after config change. Use the menu at the top right corner to update prices. If the journal failed to sync due to any issues, fix the issues and use the menu to sync again.
+     */
+    warning: () => LocalizedString;
+    /**
+     * Save
+     */
+    save: () => LocalizedString;
+    /**
+     * Cancel
+     */
+    cancel: () => LocalizedString;
+    /**
+     * Reset to Defaults
+     */
+    resetToDefaults: () => LocalizedString;
+    /**
+     * Are you sure you want to reset the config to defaults? This action is not reversible.
+     */
+    resetConfirm: () => LocalizedString;
+    /**
+     * Saved config
+     */
+    saved: () => LocalizedString;
+  };
+  about: {
+    /**
+     * Version
+     */
+    version: () => LocalizedString;
+    /**
+     * Links
+     */
+    links: () => LocalizedString;
+  };
+  import: {
+    /**
+     * Failed to save {name}. reason: {reason}
+     */
+    failedToSave: (arg: { name: unknown; reason: unknown }) => LocalizedString;
+    /**
+     * Saved {name}
+     */
+    saved: (arg: { name: unknown }) => LocalizedString;
+    /**
+     * Are you sure you want to delete {name} template?
+     */
+    deleteConfirm: (arg: { name: unknown }) => LocalizedString;
+    /**
+     * Failed to remove {name}. reason: {reason}
+     */
+    failedToRemove: (arg: { name: unknown; reason: unknown }) => LocalizedString;
+    /**
+     * Removed {name}
+     */
+    removed: (arg: { name: unknown }) => LocalizedString;
+  };
+  price: {
+    /**
+     * Price cache cleared.
+     */
+    cacheCleared: () => LocalizedString;
   };
 };
 

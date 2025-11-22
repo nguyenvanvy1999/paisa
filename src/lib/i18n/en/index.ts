@@ -321,6 +321,66 @@ const en: BaseTranslation = {
     invalidSyntax: "Invalid syntax",
     invalidDate: "Invalid date",
     cannotUseWith: "{property} cannot be used with {operator} and {type}"
+  },
+  dashboard: {
+    emptyState: {
+      title: "Looks like you are new here, you can either get started or look at a demo setup",
+      getStarted: {
+        title: "I want to get started",
+        step1: "Go to configuration page and set your default currency and locale.",
+        step2: "Go to editor page and start adding transactions to your journal.",
+        configLink: "configuration",
+        editorLink: "editor"
+      },
+      viewDemo: {
+        title: "I want to view a Demo",
+        step1:
+          "Click the button below to load a demo setup. This will load a demo journal with relevant config.",
+        step2:
+          "Once you are done playing around, you can go to editor page and select all the content and delete them.",
+        step3: "Go to configuration page and click the reset to defaults button.",
+        editorLink: "editor",
+        configLink: "configuration"
+      },
+      setupDemo: "Setup Demo"
+    },
+    assets: {
+      netWorth: "Net worth",
+      netInvestment: "Net Investment",
+      gainLoss: "Gain / Loss",
+      checkingBalance: "Checking Balance"
+    },
+    cashFlow: {
+      emptyState: "Oops! You have not made any transactions in the last 3 months."
+    },
+    expenses: {
+      emptyState: "Hurray! You have no expenses this month."
+    },
+    recentTransactions: "Recent Transactions"
+  },
+  config: {
+    warning:
+      "Prices are <b>not</b> automatically updated after config change. Use the menu at the top right corner to update prices. If the journal failed to sync due to any issues, fix the issues and use the menu to sync again.",
+    save: "Save",
+    cancel: "Cancel",
+    resetToDefaults: "Reset to Defaults",
+    resetConfirm:
+      "Are you sure you want to reset the config to defaults? This action is not reversible.",
+    saved: "Saved config"
+  },
+  about: {
+    version: "Version",
+    links: "Links"
+  },
+  import: {
+    failedToSave: "Failed to save {name}. reason: {reason}",
+    saved: "Saved {name}",
+    deleteConfirm: "Are you sure you want to delete {name} template?",
+    failedToRemove: "Failed to remove {name}. reason: {reason}",
+    removed: "Removed {name}"
+  },
+  price: {
+    cacheCleared: "Price cache cleared."
   }
 };
 

@@ -7,6 +7,7 @@
   import * as toast from "bulma-toast";
   import { refresh } from "../../../../store";
   import { sync } from "$lib/sync";
+  import LL from "$lib/i18n/i18n-svelte";
 
   let lastConfig: UserConfig;
   let config: UserConfig;
@@ -21,11 +22,7 @@
   });
 
   async function resetToDefault() {
-    if (
-      confirm(
-        "Are you sure you want to reset the config to defaults? This action is not reversible."
-      )
-    ) {
+    if (confirm($LL.config.resetConfirm())) {
       save({
         journal_path: lastConfig.journal_path,
         db_path: lastConfig.db_path
@@ -50,7 +47,7 @@
         configUpdated();
         refresh();
         toast.toast({
-          message: `Saved config`,
+          message: $LL.config.saved(),
           type: "is-success"
         });
 
@@ -72,9 +69,7 @@
           <div class="box px-3" style="max-width: 1024px;">
             <article class="message">
               <div class="message-body">
-                Prices are <b>not</b> automatically updated after config change. Use the menu at the
-                top right corner to update prices. If the journal failed to sync due to any issues, fix
-                the issues and use the menu to sync again.
+                {@html $LL.config.warning()}
               </div>
             </article>
 
@@ -90,18 +85,18 @@
                 <button
                   on:click={(_e) => save(config)}
                   class="button is-success {isLoading && 'is-loading'}"
-                  disabled={!hasChanges}>Save</button
+                  disabled={!hasChanges}>{$LL.config.save()}</button
                 >
               </div>
               <div class="control">
                 <button
                   on:click={(_e) => (config = _.cloneDeep(lastConfig))}
-                  class="button is-light">Cancel</button
+                  class="button is-light">{$LL.config.cancel()}</button
                 >
               </div>
               <div class="control">
                 <button on:click={(_e) => resetToDefault()} class="button is-danger"
-                  >Reset to Defaults</button
+                  >{$LL.config.resetToDefaults()}</button
                 >
               </div>
             </div>
