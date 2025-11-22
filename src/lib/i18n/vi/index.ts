@@ -156,8 +156,24 @@ const vi: Translation = {
         interest: "Lãi suất",
         apr: "APR"
       },
+      labels: {
+        interestOverview: "Tổng quan lãi suất",
+        monthlyRepaymentTimeline: "Dòng thời gian trả nợ hàng tháng",
+        yearWiseSpends: "Chi tiêu theo năm",
+        availableCredit: "Hạn mức khả dụng",
+        creditUsage: "Mức sử dụng tín dụng",
+        statementCount: "Số sao kê",
+        transactionCount: "Số giao dịch",
+        openingBalance: "Số dư đầu kỳ",
+        debits: "Ghi nợ",
+        credits: "Ghi có",
+        amountDue: "Số tiền đến hạn",
+        payment: "Thanh toán"
+      },
       messages: {
-        noLiabilities: "Tuyệt vời! Bạn không có khoản nợ nào."
+        noLiabilities: "Tuyệt vời! Bạn không có khoản nợ nào.",
+        noRepayments: "Bạn chưa trả khoản nợ nào.",
+        noCreditCards: "Ối! Bạn chưa cấu hình thẻ tín dụng nào. Xem trang"
       }
     },
     assets: {

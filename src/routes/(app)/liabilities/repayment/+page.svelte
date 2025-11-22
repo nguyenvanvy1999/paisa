@@ -3,6 +3,7 @@
   import LegendCard from "$lib/components/LegendCard.svelte";
   import { renderMonthlyRepaymentTimeline } from "$lib/repayment";
   import { ajax, type Legend } from "$lib/utils";
+  import { LL } from "$lib/i18n/i18n-svelte";
   import _ from "lodash";
   import { onMount } from "svelte";
 
@@ -24,7 +25,7 @@
     <div class="columns is-centered">
       <div class="column is-4 has-text-centered">
         <article class="message">
-          <div class="message-body">You haven't repaid any liabilities.</div>
+          <div class="message-body">{$LL.tables.liabilities.messages.noRepayments()}</div>
         </article>
       </div>
     </div>
@@ -41,6 +42,6 @@
         </div>
       </div>
     </div>
-    <BoxLabel text="Monthly Repayment Timeline" />
+    <BoxLabel text={$LL.tables.liabilities.labels.monthlyRepaymentTimeline()} />
   </div>
 </section>

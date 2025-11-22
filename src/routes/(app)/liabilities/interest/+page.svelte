@@ -7,6 +7,7 @@
     renderPerAccountOverview
   } from "$lib/liabilities/interest";
   import { ajax, type Legend } from "$lib/utils";
+  import { LL } from "$lib/i18n/i18n-svelte";
   import _ from "lodash";
   import { onMount } from "svelte";
   let isEmpty = false;
@@ -32,7 +33,7 @@
       <div class="column is-4 has-text-centered">
         <article class="message">
           <div class="message-body">
-            <strong>Hurray!</strong> You have no liabilities.
+            {$LL.tables.liabilities.messages.noLiabilities()}
           </div>
         </article>
       </div>
@@ -56,7 +57,7 @@
         </div>
       </div>
     </div>
-    <BoxLabel text="Interest Overview" />
+    <BoxLabel text={$LL.tables.liabilities.labels.interestOverview()} />
   </div>
 </section>
 <section class="section tab-interest">

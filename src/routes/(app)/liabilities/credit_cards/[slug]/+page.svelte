@@ -15,6 +15,7 @@
     type CreditCardBill,
     type CreditCardSummary
   } from "$lib/utils";
+  import { LL } from "$lib/i18n/i18n-svelte";
   import { MasonryGrid } from "@egjs/svelte-grid";
   import _, { now } from "lodash";
   import { onMount } from "svelte";
@@ -64,7 +65,7 @@
             <LevelItem
               narrow
               small
-              title="Available Credit"
+              title={$LL.tables.liabilities.labels.availableCredit()}
               color={COLORS.neutral}
               value={formatCurrency(Math.max(creditCard.creditLimit - creditCard.balance, 0))}
             />
@@ -72,7 +73,7 @@
             <LevelItem
               narrow
               small
-              title="Credit Usage"
+              title={$LL.tables.liabilities.labels.creditUsage()}
               color={COLORS.neutral}
               value={formatPercentage(creditCard.balance / creditCard.creditLimit, 2)}
             />
@@ -82,14 +83,14 @@
             <LevelItem
               narrow
               small
-              title="Statement Count"
+              title={$LL.tables.liabilities.labels.statementCount()}
               color={COLORS.neutral}
               value={creditCard.bills.length.toString()}
             />
             <LevelItem
               narrow
               small
-              title="Transaction Count"
+              title={$LL.tables.liabilities.labels.transactionCount()}
               color={COLORS.neutral}
               value={_.sumBy(creditCard.bills, (b) => b.transactions.length).toString()}
             />
@@ -98,7 +99,7 @@
           <div class="box px-3 py-0">
             <svg bind:this={svg} width="100%" />
           </div>
-          <BoxLabel text="Year wise spends" />
+          <BoxLabel text={$LL.tables.liabilities.labels.yearWiseSpends()} />
         {/if}
       </div>
       <div class="column is-9-widescreen is-8">
@@ -113,7 +114,9 @@
                   <span>{iconify(creditCard.account)}</span>
                 </div>
                 <div class="ml-3 whitespace-nowrap">
-                  <span class="mr-1 is-size-7 has-text-grey">Payment</span>
+                  <span class="mr-1 is-size-7 has-text-grey"
+                    >{$LL.tables.liabilities.labels.payment()}</span
+                  >
                   <span
                     ><DueDate dueDate={currentBill.dueDate} paidDate={currentBill.paidDate} /></span
                   >
@@ -138,7 +141,7 @@
             <LevelItem
               {small}
               narrow
-              title="Opening Balance"
+              title={$LL.tables.liabilities.labels.openingBalance()}
               color={COLORS.neutral}
               value={formatCurrency(currentBill.openingBalance)}
             />
@@ -150,7 +153,7 @@
             <LevelItem
               {small}
               narrow
-              title="Debits"
+              title={$LL.tables.liabilities.labels.debits()}
               color={COLORS.expenses}
               value={formatCurrency(currentBill.debits)}
             />
@@ -162,7 +165,7 @@
             <LevelItem
               {small}
               narrow
-              title="Credits"
+              title={$LL.tables.liabilities.labels.credits()}
               color={COLORS.income}
               value={formatCurrency(currentBill.credits)}
             />
@@ -174,7 +177,7 @@
             <LevelItem
               {small}
               narrow
-              title="Amount Due"
+              title={$LL.tables.liabilities.labels.amountDue()}
               color={COLORS.liabilities}
               value={formatCurrency(currentBill.closingBalance)}
             />

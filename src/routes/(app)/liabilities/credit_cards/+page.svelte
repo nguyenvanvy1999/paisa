@@ -2,6 +2,7 @@
   import CreditCardCard from "$lib/components/CreditCardCard.svelte";
   import ZeroState from "$lib/components/ZeroState.svelte";
   import { ajax, helpUrl, type CreditCardSummary } from "$lib/utils";
+  import { LL } from "$lib/i18n/i18n-svelte";
   import _ from "lodash";
   import { onMount } from "svelte";
 
@@ -30,7 +31,7 @@
     <div class="columns flex-wrap">
       <div class="column is-12">
         <ZeroState item={!isEmpty}>
-          <strong>Oops!</strong> You haven't configured any credit cards yet. Checkout the
+          {$LL.tables.liabilities.messages.noCreditCards()}{" "}
           <a href={helpUrl("credit-card")}>docs</a> page to get started.
         </ZeroState>
       </div>

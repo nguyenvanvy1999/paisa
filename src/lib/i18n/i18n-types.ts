@@ -506,11 +506,69 @@ type RootTranslation = {
          */
         apr: string;
       };
+      labels: {
+        /**
+         * I​n​t​e​r​e​s​t​ ​O​v​e​r​v​i​e​w
+         */
+        interestOverview: string;
+        /**
+         * M​o​n​t​h​l​y​ ​R​e​p​a​y​m​e​n​t​ ​T​i​m​e​l​i​n​e
+         */
+        monthlyRepaymentTimeline: string;
+        /**
+         * Y​e​a​r​ ​w​i​s​e​ ​s​p​e​n​d​s
+         */
+        yearWiseSpends: string;
+        /**
+         * A​v​a​i​l​a​b​l​e​ ​C​r​e​d​i​t
+         */
+        availableCredit: string;
+        /**
+         * C​r​e​d​i​t​ ​U​s​a​g​e
+         */
+        creditUsage: string;
+        /**
+         * S​t​a​t​e​m​e​n​t​ ​C​o​u​n​t
+         */
+        statementCount: string;
+        /**
+         * T​r​a​n​s​a​c​t​i​o​n​ ​C​o​u​n​t
+         */
+        transactionCount: string;
+        /**
+         * O​p​e​n​i​n​g​ ​B​a​l​a​n​c​e
+         */
+        openingBalance: string;
+        /**
+         * D​e​b​i​t​s
+         */
+        debits: string;
+        /**
+         * C​r​e​d​i​t​s
+         */
+        credits: string;
+        /**
+         * A​m​o​u​n​t​ ​D​u​e
+         */
+        amountDue: string;
+        /**
+         * P​a​y​m​e​n​t
+         */
+        payment: string;
+      };
       messages: {
         /**
          * H​u​r​r​a​y​!​ ​Y​o​u​ ​h​a​v​e​ ​n​o​ ​l​i​a​b​i​l​i​t​i​e​s​.
          */
         noLiabilities: string;
+        /**
+         * Y​o​u​ ​h​a​v​e​n​'​t​ ​r​e​p​a​i​d​ ​a​n​y​ ​l​i​a​b​i​l​i​t​i​e​s​.
+         */
+        noRepayments: string;
+        /**
+         * O​o​p​s​!​ ​Y​o​u​ ​h​a​v​e​n​'​t​ ​c​o​n​f​i​g​u​r​e​d​ ​a​n​y​ ​c​r​e​d​i​t​ ​c​a​r​d​s​ ​y​e​t​.​ ​C​h​e​c​k​o​u​t​ ​t​h​e
+         */
+        noCreditCards: string;
       };
     };
     assets: {
@@ -1193,11 +1251,69 @@ export type TranslationFunctions = {
          */
         apr: () => LocalizedString;
       };
+      labels: {
+        /**
+         * Interest Overview
+         */
+        interestOverview: () => LocalizedString;
+        /**
+         * Monthly Repayment Timeline
+         */
+        monthlyRepaymentTimeline: () => LocalizedString;
+        /**
+         * Year wise spends
+         */
+        yearWiseSpends: () => LocalizedString;
+        /**
+         * Available Credit
+         */
+        availableCredit: () => LocalizedString;
+        /**
+         * Credit Usage
+         */
+        creditUsage: () => LocalizedString;
+        /**
+         * Statement Count
+         */
+        statementCount: () => LocalizedString;
+        /**
+         * Transaction Count
+         */
+        transactionCount: () => LocalizedString;
+        /**
+         * Opening Balance
+         */
+        openingBalance: () => LocalizedString;
+        /**
+         * Debits
+         */
+        debits: () => LocalizedString;
+        /**
+         * Credits
+         */
+        credits: () => LocalizedString;
+        /**
+         * Amount Due
+         */
+        amountDue: () => LocalizedString;
+        /**
+         * Payment
+         */
+        payment: () => LocalizedString;
+      };
       messages: {
         /**
          * Hurray! You have no liabilities.
          */
         noLiabilities: () => LocalizedString;
+        /**
+         * You haven't repaid any liabilities.
+         */
+        noRepayments: () => LocalizedString;
+        /**
+         * Oops! You haven't configured any credit cards yet. Checkout the
+         */
+        noCreditCards: () => LocalizedString;
       };
     };
     assets: {

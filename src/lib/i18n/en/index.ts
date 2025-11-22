@@ -157,8 +157,24 @@ const en: BaseTranslation = {
         interest: "Interest",
         apr: "APR"
       },
+      labels: {
+        interestOverview: "Interest Overview",
+        monthlyRepaymentTimeline: "Monthly Repayment Timeline",
+        yearWiseSpends: "Year wise spends",
+        availableCredit: "Available Credit",
+        creditUsage: "Credit Usage",
+        statementCount: "Statement Count",
+        transactionCount: "Transaction Count",
+        openingBalance: "Opening Balance",
+        debits: "Debits",
+        credits: "Credits",
+        amountDue: "Amount Due",
+        payment: "Payment"
+      },
       messages: {
-        noLiabilities: "Hurray! You have no liabilities."
+        noLiabilities: "Hurray! You have no liabilities.",
+        noRepayments: "You haven't repaid any liabilities.",
+        noCreditCards: "Oops! You haven't configured any credit cards yet. Checkout the"
       }
     },
     assets: {
