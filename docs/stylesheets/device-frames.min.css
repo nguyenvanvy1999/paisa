@@ -111,8 +111,7 @@
   width: calc(100% + var(--padding-h, 0px) * 2);
 }
 .app-frame.mac::before {
-  background:
-    radial-gradient(
+  background: radial-gradient(
       circle at calc(var(--button-inset) + var(--button-size) * 0.5) calc(var(--bar-height) / 2),
       var(--button-color, var(--button-color-default, #ff5f57)) calc(var(--button-size) / 2),
       transparent calc(var(--button-size) / 2)

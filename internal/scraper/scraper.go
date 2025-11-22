@@ -2,9 +2,9 @@ package scraper
 
 import (
 	"github.com/ananthakumaran/paisa/internal/model/price"
-	"github.com/ananthakumaran/paisa/internal/scraper/etf/fmarket"
 	"github.com/ananthakumaran/paisa/internal/scraper/metal"
 	"github.com/ananthakumaran/paisa/internal/scraper/mutualfund"
+	"github.com/ananthakumaran/paisa/internal/scraper/mutualfund/fmarket"
 	"github.com/ananthakumaran/paisa/internal/scraper/nps"
 	"github.com/ananthakumaran/paisa/internal/scraper/stock"
 	log "github.com/sirupsen/logrus"
@@ -34,7 +34,7 @@ func GetProviderByCode(code string) price.PriceProvider {
 		return &stock.YahooPriceProvider{}
 	case "co-alphavantage":
 		return &stock.AlphaVantagePriceProvider{}
-	case "vn-fmarket-etf":
+	case "vn-fmarket-mf":
 		return &fmarket.PriceProvider{}
 	}
 	log.Fatal("Unknown price provider: ", code)

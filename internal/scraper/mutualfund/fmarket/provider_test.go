@@ -54,7 +54,7 @@ func TestPriceProviderGetPricesSuccess(t *testing.T) {
 	}
 
 	provider := PriceProvider{}
-	prices, err := provider.GetPrices("42", "VN100 ETF")
+	prices, err := provider.GetPrices("42", "VN100 Quỹ Tương Hỗ")
 	if err != nil {
 		t.Fatalf("GetPrices returned error: %v", err)
 	}
@@ -82,14 +82,14 @@ func TestPriceProviderHandlesHTTPFailure(t *testing.T) {
 	navHistoryEndpoint = server.URL
 
 	provider := PriceProvider{}
-	if _, err := provider.GetPrices("42", "VN100 ETF"); err == nil {
+	if _, err := provider.GetPrices("42", "VN100 Quỹ Tương Hỗ"); err == nil {
 		t.Fatalf("expected error for HTTP 400 response")
 	}
 }
 
 func TestPriceProviderRejectsNonNumericProductID(t *testing.T) {
 	provider := PriceProvider{}
-	if _, err := provider.GetPrices("ETF-42", "VN100 ETF"); err == nil {
+	if _, err := provider.GetPrices("MF-42", "VN100 Quỹ Tương Hỗ"); err == nil {
 		t.Fatalf("expected error for non numeric product ID")
 	}
 }

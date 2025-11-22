@@ -17,6 +17,7 @@ harvesting.
 2. tax_category - This defines how the taxes are calculated as the
    government usually tweaks the tax code regularly with various rules
    like grandfathering, cost inflation index adjustment, etc.
+
    1. `equity65` - This is for 65% or more investment in Indian
       equity.
 

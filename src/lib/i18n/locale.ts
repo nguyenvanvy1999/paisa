@@ -1,5 +1,5 @@
 import en from "./en";
-import type { Locales } from "./i18n-types";
+import type { Locales, Translations } from "./i18n-types";
 import { baseLocale, locales as supportedLocales, loadedLocales } from "./i18n-util";
 import { loadFormatters, loadLocaleAsync } from "./i18n-util.async";
 import { setLocale } from "./i18n-svelte";
@@ -18,7 +18,7 @@ const hasWindow = typeof window !== "undefined";
 const hasNavigator = typeof navigator !== "undefined";
 const hasDocument = typeof document !== "undefined";
 
-loadedLocales[baseLocale] = en;
+loadedLocales[baseLocale] = en as unknown as Translations;
 loadFormatters(baseLocale);
 
 let currentLocale: Locales = baseLocale;
