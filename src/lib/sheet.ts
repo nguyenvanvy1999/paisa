@@ -20,6 +20,8 @@ import { functions } from "./sheet/functions";
 
 import { Environment, buildAST } from "./sheet/interpreter";
 import type { Posting } from "./utils";
+import { getActiveLocale } from "./i18n/locale";
+import { i18nObject } from "./i18n/i18n-util";
 
 let latestIdentifiers: string[] = [];
 

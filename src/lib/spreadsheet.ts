@@ -123,7 +123,6 @@ async function parseXLSX(file: File): Promise<Result> {
         // follow through to the error below
       }
 
-      const LL = i18nObject(getActiveLocale());
       return { data: [], error: LL.spreadsheet.unableToParsePasswordProtected() };
     }
     throw e;
