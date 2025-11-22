@@ -294,6 +294,33 @@ const en: BaseTranslation = {
       threeYears: "3 years",
       oneYear: "1 year"
     }
+  },
+  spreadsheet: {
+    unsupportedFileType: "Unsupported file type {extension}",
+    passwordPrompt: "Please enter the password to open this XLSX file. Press cancel to exit.",
+    passwordRequired: "Password required.",
+    unableToParsePasswordProtected: "Unable to parse Password protected XLSX"
+  },
+  sync: {
+    failedToSync: "Failed to sync"
+  },
+  transactionSequence: {
+    weekly: "weekly",
+    biWeekly: "bi-weekly",
+    monthly: "monthly",
+    quarterly: "quarterly",
+    halfYearly: "half-yearly",
+    yearly: "yearly",
+    everyDays: "every {days} days"
+  },
+  pdf: {
+    passwordPrompt: "Please enter the password to open this PDF file. Press cancel to exit.",
+    passwordRequired: "Password required."
+  },
+  editor: {
+    invalidSyntax: "Invalid syntax",
+    invalidDate: "Invalid date",
+    cannotUseWith: "{property} cannot be used with {operator} and {type}"
   }
 };
 

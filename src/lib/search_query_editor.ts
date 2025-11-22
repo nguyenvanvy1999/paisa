@@ -19,6 +19,8 @@ import _ from "lodash";
 import { writable } from "svelte/store";
 import * as Terms from "./search/parser/parser.terms";
 import { queryExtension } from "./search/parser/query";
+import { i18nObject } from "./i18n/i18n-util";
+import { getActiveLocale } from "./i18n/locale";
 
 abstract class AST {
   readonly id: number;
@@ -111,7 +113,7 @@ class DateValueAST extends AST {
           from: this.node.from,
           to: this.node.to,
           severity: "error",
-          message: `Invalid date`
+          message: i18nObject(getActiveLocale()).editor.invalidDate()
         }
       ];
     }
@@ -176,11 +178,16 @@ class ConditionAST extends AST {
     const allowed: number[] =
       allowedCombinations[this.property.childId.toString()][this.operator.value] || [];
     if (!allowed.includes(this.value.value.id)) {
+      const LL = i18nObject(getActiveLocale());
       diagnostics.push({
         from: this.node.from,
         to: this.node.to,
         severity: "error",
-        message: `${this.property.value} cannot be used with ${this.operator.value} and ${this.value.value.type}`
+        message: LL.editor.cannotUseWith({
+          property: this.property.value,
+          operator: this.operator.value,
+          type: this.value.value.type
+        })
       });
     }
 
@@ -419,11 +426,12 @@ function lint(editor: EditorView): Diagnostic[] {
 
   tree.cursor().iterate((node) => {
     if (node.type.isError) {
+      const LL = i18nObject(getActiveLocale());
       diagnostics.push({
         from: node.from,
         to: node.to,
         severity: "error",
-        message: "Invalid syntax"
+        message: LL.editor.invalidSyntax()
       });
     }
   });

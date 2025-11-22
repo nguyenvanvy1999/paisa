@@ -293,6 +293,33 @@ const vi: Translation = {
       threeYears: "3 năm",
       oneYear: "1 năm"
     }
+  },
+  spreadsheet: {
+    unsupportedFileType: "Không hỗ trợ loại file {extension}",
+    passwordPrompt: "Vui lòng nhập mật khẩu để mở file XLSX này. Nhấn hủy để thoát.",
+    passwordRequired: "Yêu cầu mật khẩu.",
+    unableToParsePasswordProtected: "Không thể phân tích file XLSX được bảo vệ bằng mật khẩu"
+  },
+  sync: {
+    failedToSync: "Đồng bộ thất bại"
+  },
+  transactionSequence: {
+    weekly: "hàng tuần",
+    biWeekly: "hai tuần một lần",
+    monthly: "hàng tháng",
+    quarterly: "hàng quý",
+    halfYearly: "nửa năm",
+    yearly: "hàng năm",
+    everyDays: "mỗi {days} ngày"
+  },
+  pdf: {
+    passwordPrompt: "Vui lòng nhập mật khẩu để mở file PDF này. Nhấn hủy để thoát.",
+    passwordRequired: "Yêu cầu mật khẩu."
+  },
+  editor: {
+    invalidSyntax: "Cú pháp không hợp lệ",
+    invalidDate: "Ngày không hợp lệ",
+    cannotUseWith: "{property} không thể sử dụng với {operator} và {type}"
   }
 };
 

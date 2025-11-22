@@ -4,6 +4,8 @@ import _ from "lodash";
 import { format } from "./journal";
 import { pdf2array } from "./pdf";
 import * as XlsxPopulate from "xlsx-populate";
+import { i18nObject } from "./i18n/i18n-util";
+import { getActiveLocale } from "./i18n/locale";
 
 interface Result {
   data: string[][];
@@ -20,7 +22,8 @@ export function parse(file: File): Promise<Result> {
   } else if (extension === "pdf") {
     return parsePDF(file);
   }
-  throw new Error(`Unsupported file type ${extension}`);
+  const LL = i18nObject(getActiveLocale());
+  throw new Error(LL.spreadsheet.unsupportedFileType({ extension: extension || "unknown" }));
 }
 
 export function asRows(result: Result): Array<Record<string, any>> {
@@ -94,11 +97,10 @@ async function parseXLSX(file: File): Promise<Result> {
     return { data: json };
   } catch (e) {
     if (/password-protected/.test(e.message)) {
-      const password = prompt(
-        "Please enter the password to open this XLSX file. Press cancel to exit."
-      );
+      const LL = i18nObject(getActiveLocale());
+      const password = prompt(LL.spreadsheet.passwordPrompt());
       if (password === null) {
-        return { data: [], error: "Password required." };
+        return { data: [], error: LL.spreadsheet.passwordRequired() };
       }
 
       try {
@@ -121,7 +123,8 @@ async function parseXLSX(file: File): Promise<Result> {
         // follow through to the error below
       }
 
-      return { data: [], error: "Unable to parse Password protected XLSX" };
+      const LL = i18nObject(getActiveLocale());
+      return { data: [], error: LL.spreadsheet.unableToParsePasswordProtected() };
     }
     throw e;
   }

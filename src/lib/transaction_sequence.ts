@@ -12,6 +12,8 @@ import dayjs from "dayjs";
 import { parse, type CronExprs } from "@datasert/cronjs-parser";
 import { getFutureMatches } from "@datasert/cronjs-matcher";
 import { iconGlyph } from "./icon";
+import { i18nObject } from "./i18n/i18n-util";
+import { getActiveLocale } from "./i18n/locale";
 
 const end = now().add(36, "month");
 
@@ -153,31 +155,32 @@ export function scheduleIcon(schedule: TransactionSchedule) {
 }
 
 export function intervalText(ts: TransactionSequence) {
+  const LL = i18nObject(getActiveLocale());
   if (ts.interval >= 7 && ts.interval <= 8) {
-    return "weekly";
+    return LL.transactionSequence.weekly();
   }
 
   if (ts.interval >= 14 && ts.interval <= 16) {
-    return "bi-weekly";
+    return LL.transactionSequence.biWeekly();
   }
 
   if (ts.interval >= 28 && ts.interval <= 33) {
-    return "monthly";
+    return LL.transactionSequence.monthly();
   }
 
   if (ts.interval >= 87 && ts.interval <= 100) {
-    return "quarterly";
+    return LL.transactionSequence.quarterly();
   }
 
   if (ts.interval >= 175 && ts.interval <= 190) {
-    return "half-yearly";
+    return LL.transactionSequence.halfYearly();
   }
 
   if (ts.interval >= 350 && ts.interval <= 395) {
-    return "yearly";
+    return LL.transactionSequence.yearly();
   }
 
-  return `every ${ts.interval} days`;
+  return LL.transactionSequence.everyDays({ days: ts.interval });
 }
 
 function nextDate(ts: TransactionSequence, date: dayjs.Dayjs) {

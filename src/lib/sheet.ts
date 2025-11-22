@@ -38,11 +38,12 @@ function lint(env: Environment) {
 
     tree.cursor().iterate((node) => {
       if (node.type.isError) {
+        const LL = i18nObject(getActiveLocale());
         diagnostics.push({
           from: node.from,
           to: node.to,
           severity: "error",
-          message: "Invalid syntax"
+          message: LL.editor.invalidSyntax()
         });
       }
     });

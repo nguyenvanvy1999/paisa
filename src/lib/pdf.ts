@@ -1,5 +1,7 @@
 import * as pdfjs from "pdfjs-dist";
 import type { TextItem } from "pdfjs-dist/types/src/display/api";
+import { i18nObject } from "./i18n/i18n-util";
+import { getActiveLocale } from "./i18n/locale";
 
 export type TextItemWithPosition = TextItem & {
   x: number;
@@ -59,11 +61,10 @@ function makeRow(cells: TextItemWithPosition[]): string[] {
 export async function pdf2array(data: ArrayBuffer): Promise<string[][]> {
   const loader = pdfjs.getDocument(data);
   loader.onPassword = (cb: any) => {
-    const password = prompt(
-      "Please enter the password to open this PDF file. Press cancel to exit."
-    );
+    const LL = i18nObject(getActiveLocale());
+    const password = prompt(LL.pdf.passwordPrompt());
     if (password === null) {
-      throw new Error("Password required.");
+      throw new Error(LL.pdf.passwordRequired());
     }
     cb(password);
   };
