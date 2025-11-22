@@ -6,6 +6,7 @@
     nonZeroFloatChange
   } from "$lib/table_formatters";
   import { ajax, buildTree, type LiabilityBreakdown } from "$lib/utils";
+  import { LL } from "$lib/i18n/i18n-svelte";
   import _ from "lodash";
   import { onMount } from "svelte";
   import type { ColumnDefinition } from "tabulator-tables";
@@ -23,37 +24,42 @@
 
   const columns: ColumnDefinition[] = [
     {
-      title: "Account",
+      title: $LL.tables.liabilities.columns.account(),
       field: "group",
       formatter: indendedLiabilityAccountName,
       frozen: true
     },
     {
-      title: "Drawn Amount",
+      title: $LL.tables.liabilities.columns.drawnAmount(),
       field: "drawn_amount",
       hozAlign: "right",
       vertAlign: "middle",
       formatter: nonZeroCurrency
     },
     {
-      title: "Repaid Amount",
+      title: $LL.tables.liabilities.columns.repaidAmount(),
       field: "repaid_amount",
       hozAlign: "right",
       formatter: nonZeroCurrency
     },
     {
-      title: "Balance Amount",
+      title: $LL.tables.liabilities.columns.balanceAmount(),
       field: "balance_amount",
       hozAlign: "right",
       formatter: nonZeroCurrency
     },
     {
-      title: "Interest",
+      title: $LL.tables.liabilities.columns.interest(),
       field: "interest_amount",
       hozAlign: "right",
       formatter: nonZeroCurrency
     },
-    { title: "APR", field: "apr", hozAlign: "right", formatter: nonZeroFloatChange }
+    {
+      title: $LL.tables.liabilities.columns.apr(),
+      field: "apr",
+      hozAlign: "right",
+      formatter: nonZeroFloatChange
+    }
   ];
 
   let tree: LiabilityBreakdown[] = [];
@@ -68,7 +74,7 @@
       <div class="column is-4 has-text-centered">
         <article class="message">
           <div class="message-body">
-            <strong>Hurray!</strong> You have no liabilities.
+            {$LL.tables.liabilities.messages.noLiabilities()}
           </div>
         </article>
       </div>

@@ -1,5 +1,6 @@
 <script lang="ts">
   import { renderBreakdowns } from "$lib/schedule_al";
+  import { LL } from "$lib/i18n/i18n-svelte";
   import _ from "lodash";
   import { ajax, type ScheduleAL } from "$lib/utils";
   import { onMount } from "svelte";
@@ -32,8 +33,8 @@
       <div class="columns">
         <div class="column is-12">
           <p class="subtitle is-12">
-            Schedule AL as on <span class="has-text-weight-bold"
-              >{selectedScheduleAl.date.format("DD MMM YYYY")}</span
+            {$LL.tables.scheduleAl.asOn()}
+            <span class="has-text-weight-bold">{selectedScheduleAl.date.format("DD MMM YYYY")}</span
             >
           </p>
         </div>
@@ -46,10 +47,10 @@
           <table class="table is-narrow is-fullwidth is-hoverable">
             <thead>
               <tr>
-                <th>Code</th>
-                <th>Section</th>
-                <th>Details</th>
-                <th class="has-text-right">Amount</th>
+                <th>{$LL.tables.scheduleAl.headers.code()}</th>
+                <th>{$LL.tables.scheduleAl.headers.section()}</th>
+                <th>{$LL.tables.scheduleAl.headers.details()}</th>
+                <th class="has-text-right">{$LL.tables.scheduleAl.headers.amount()}</th>
               </tr>
             </thead>
             <tbody class="d3-schedule-al has-text-grey-dark" />

@@ -1,5 +1,6 @@
 <script lang="ts">
   import { type AssetBreakdown, buildTree } from "$lib/utils";
+  import { LL } from "$lib/i18n/i18n-svelte";
   import _ from "lodash";
   import Table from "./Table.svelte";
   import type { ColumnDefinition } from "tabulator-tables";
@@ -17,35 +18,50 @@
 
   const columns: ColumnDefinition[] = [
     {
-      title: "Account",
+      title: $LL.tables.assets.columns.account(),
       field: "group",
       formatter: indent ? indendedAssetAccountName : accountName,
       frozen: true
     },
     {
-      title: "Investment Amount",
+      title: $LL.tables.assets.columns.investmentAmount(),
       field: "investmentAmount",
       hozAlign: "right",
       vertAlign: "middle",
       formatter: nonZeroCurrency
     },
     {
-      title: "Withdrawal Amount",
+      title: $LL.tables.assets.columns.withdrawalAmount(),
       field: "withdrawalAmount",
       hozAlign: "right",
       formatter: nonZeroCurrency
     },
     {
-      title: "Balance Units",
+      title: $LL.tables.assets.columns.balanceUnits(),
       field: "balanceUnits",
       hozAlign: "right",
       formatter: nonZeroCurrency
     },
-    { title: "Market Value", field: "marketAmount", hozAlign: "right", formatter: nonZeroCurrency },
-    { title: "Change", field: "gainAmount", hozAlign: "right", formatter: formatCurrencyChange },
-    { title: "XIRR", field: "xirr", hozAlign: "right", formatter: nonZeroFloatChange },
     {
-      title: "Absolute Return",
+      title: $LL.tables.assets.columns.marketValue(),
+      field: "marketAmount",
+      hozAlign: "right",
+      formatter: nonZeroCurrency
+    },
+    {
+      title: $LL.tables.assets.columns.change(),
+      field: "gainAmount",
+      hozAlign: "right",
+      formatter: formatCurrencyChange
+    },
+    {
+      title: $LL.tables.assets.columns.xirr(),
+      field: "xirr",
+      hozAlign: "right",
+      formatter: nonZeroFloatChange
+    },
+    {
+      title: $LL.tables.assets.columns.absoluteReturn(),
       field: "absoluteReturn",
       hozAlign: "right",
       formatter: nonZeroPercentageChange

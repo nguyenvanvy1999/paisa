@@ -306,6 +306,396 @@ type RootTranslation = {
      */
     detailsLabel: string;
   };
+  tables: {
+    columns: {
+      /**
+       * A​c​c​o​u​n​t
+       */
+      account: string;
+      /**
+       * M​a​r​k​e​t​ ​V​a​l​u​e
+       */
+      marketValue: string;
+      /**
+       * P​e​r​c​e​n​t
+       */
+      percent: string;
+      /**
+       * %
+       */
+      percentSymbol: string;
+      /**
+       * D​r​a​w​n​ ​A​m​o​u​n​t
+       */
+      drawnAmount: string;
+      /**
+       * R​e​p​a​i​d​ ​A​m​o​u​n​t
+       */
+      repaidAmount: string;
+      /**
+       * B​a​l​a​n​c​e​ ​A​m​o​u​n​t
+       */
+      balanceAmount: string;
+      /**
+       * I​n​t​e​r​e​s​t
+       */
+      interest: string;
+      /**
+       * A​P​R
+       */
+      apr: string;
+      /**
+       * I​n​v​e​s​t​m​e​n​t​ ​A​m​o​u​n​t
+       */
+      investmentAmount: string;
+      /**
+       * W​i​t​h​d​r​a​w​a​l​ ​A​m​o​u​n​t
+       */
+      withdrawalAmount: string;
+      /**
+       * B​a​l​a​n​c​e​ ​U​n​i​t​s
+       */
+      balanceUnits: string;
+      /**
+       * C​h​a​n​g​e
+       */
+      change: string;
+      /**
+       * X​I​R​R
+       */
+      xirr: string;
+      /**
+       * A​b​s​o​l​u​t​e​ ​R​e​t​u​r​n
+       */
+      absoluteReturn: string;
+      /**
+       * C​o​m​m​o​d​i​t​y​ ​N​a​m​e
+       */
+      commodityName: string;
+      /**
+       * L​a​s​t​ ​D​a​t​e
+       */
+      lastDate: string;
+      /**
+       * L​a​s​t​ ​P​r​i​c​e
+       */
+      lastPrice: string;
+      /**
+       * 1​ ​D​a​y
+       */
+      oneDay: string;
+      /**
+       * 1​ ​W​e​e​k
+       */
+      oneWeek: string;
+      /**
+       * 4​ ​W​e​e​k​s
+       */
+      fourWeeks: string;
+      /**
+       * 1​ ​Y​e​a​r
+       */
+      oneYear: string;
+      /**
+       * 3​ ​Y​e​a​r​s
+       */
+      threeYears: string;
+      /**
+       * 5​ ​Y​e​a​r​s
+       */
+      fiveYears: string;
+      /**
+       * C​o​m​m​o​d​i​t​y​ ​T​y​p​e
+       */
+      commodityType: string;
+      /**
+       * C​o​m​m​o​d​i​t​y​ ​I​D
+       */
+      commodityId: string;
+      /**
+       * C​o​d​e
+       */
+      code: string;
+      /**
+       * S​e​c​t​i​o​n
+       */
+      section: string;
+      /**
+       * D​e​t​a​i​l​s
+       */
+      details: string;
+      /**
+       * A​m​o​u​n​t
+       */
+      amount: string;
+      /**
+       * E​n​d​ ​B​a​l​a​n​c​e
+       */
+      endBalance: string;
+      /**
+       * S​t​a​r​t​ ​B​a​l​a​n​c​e
+       */
+      startBalance: string;
+    };
+    allocation: {
+      columns: {
+        /**
+         * A​c​c​o​u​n​t
+         */
+        account: string;
+        /**
+         * M​a​r​k​e​t​ ​V​a​l​u​e
+         */
+        marketValue: string;
+        /**
+         * P​e​r​c​e​n​t
+         */
+        percent: string;
+        /**
+         * %
+         */
+        percentSymbol: string;
+      };
+      labels: {
+        /**
+         * A​l​l​o​c​a​t​i​o​n​ ​T​a​r​g​e​t​s
+         */
+        allocationTargets: string;
+        /**
+         * A​l​l​o​c​a​t​i​o​n​ ​b​y​ ​c​a​t​e​g​o​r​y
+         */
+        allocationByCategory: string;
+        /**
+         * A​l​l​o​c​a​t​i​o​n​ ​b​y​ ​v​a​l​u​e
+         */
+        allocationByValue: string;
+        /**
+         * A​l​l​o​c​a​t​i​o​n​ ​T​i​m​e​l​i​n​e
+         */
+        allocationTimeline: string;
+        /**
+         * A​l​l​o​c​a​t​i​o​n​ ​T​a​b​l​e
+         */
+        allocationTable: string;
+      };
+    };
+    liabilities: {
+      columns: {
+        /**
+         * A​c​c​o​u​n​t
+         */
+        account: string;
+        /**
+         * D​r​a​w​n​ ​A​m​o​u​n​t
+         */
+        drawnAmount: string;
+        /**
+         * R​e​p​a​i​d​ ​A​m​o​u​n​t
+         */
+        repaidAmount: string;
+        /**
+         * B​a​l​a​n​c​e​ ​A​m​o​u​n​t
+         */
+        balanceAmount: string;
+        /**
+         * I​n​t​e​r​e​s​t
+         */
+        interest: string;
+        /**
+         * A​P​R
+         */
+        apr: string;
+      };
+      messages: {
+        /**
+         * H​u​r​r​a​y​!​ ​Y​o​u​ ​h​a​v​e​ ​n​o​ ​l​i​a​b​i​l​i​t​i​e​s​.
+         */
+        noLiabilities: string;
+      };
+    };
+    assets: {
+      columns: {
+        /**
+         * A​c​c​o​u​n​t
+         */
+        account: string;
+        /**
+         * I​n​v​e​s​t​m​e​n​t​ ​A​m​o​u​n​t
+         */
+        investmentAmount: string;
+        /**
+         * W​i​t​h​d​r​a​w​a​l​ ​A​m​o​u​n​t
+         */
+        withdrawalAmount: string;
+        /**
+         * B​a​l​a​n​c​e​ ​U​n​i​t​s
+         */
+        balanceUnits: string;
+        /**
+         * M​a​r​k​e​t​ ​V​a​l​u​e
+         */
+        marketValue: string;
+        /**
+         * C​h​a​n​g​e
+         */
+        change: string;
+        /**
+         * X​I​R​R
+         */
+        xirr: string;
+        /**
+         * A​b​s​o​l​u​t​e​ ​R​e​t​u​r​n
+         */
+        absoluteReturn: string;
+      };
+    };
+    price: {
+      headers: {
+        /**
+         * C​o​m​m​o​d​i​t​y​ ​N​a​m​e
+         */
+        commodityName: string;
+        /**
+         * L​a​s​t​ ​D​a​t​e
+         */
+        lastDate: string;
+        /**
+         * L​a​s​t​ ​P​r​i​c​e
+         */
+        lastPrice: string;
+        /**
+         * 1​ ​D​a​y
+         */
+        oneDay: string;
+        /**
+         * 1​ ​W​e​e​k
+         */
+        oneWeek: string;
+        /**
+         * 4​ ​W​e​e​k​s
+         */
+        fourWeeks: string;
+        /**
+         * 1​ ​Y​e​a​r
+         */
+        oneYear: string;
+        /**
+         * 3​ ​Y​e​a​r​s
+         */
+        threeYears: string;
+        /**
+         * 5​ ​Y​e​a​r​s
+         */
+        fiveYears: string;
+        /**
+         * C​o​m​m​o​d​i​t​y​ ​T​y​p​e
+         */
+        commodityType: string;
+        /**
+         * C​o​m​m​o​d​i​t​y​ ​I​D
+         */
+        commodityId: string;
+      };
+      /**
+       * C​l​e​a​r​ ​P​r​i​c​e​ ​C​a​c​h​e
+       */
+      clearCache: string;
+    };
+    incomeStatement: {
+      headers: {
+        /**
+         * A​c​c​o​u​n​t
+         */
+        account: string;
+        /**
+         * C​h​a​n​g​e
+         */
+        change: string;
+        /**
+         * E​n​d​ ​B​a​l​a​n​c​e
+         */
+        endBalance: string;
+        /**
+         * S​t​a​r​t​ ​B​a​l​a​n​c​e
+         */
+        startBalance: string;
+      };
+      labels: {
+        /**
+         * I​n​c​o​m​e
+         */
+        income: string;
+        /**
+         * T​a​x
+         */
+        tax: string;
+        /**
+         * I​n​t​e​r​e​s​t
+         */
+        interest: string;
+        /**
+         * G​a​i​n​ ​/​ ​L​o​s​s
+         */
+        gainLoss: string;
+        /**
+         * E​q​u​i​t​y
+         */
+        equity: string;
+        /**
+         * L​i​a​b​i​l​i​t​i​e​s
+         */
+        liabilities: string;
+        /**
+         * E​x​p​e​n​s​e​s
+         */
+        expenses: string;
+      };
+      summary: {
+        /**
+         * S​t​a​r​t
+         */
+        start: string;
+        /**
+         * E​n​d
+         */
+        end: string;
+        /**
+         * c​h​a​n​g​e
+         */
+        change: string;
+      };
+      messages: {
+        /**
+         * O​o​p​s​!​ ​Y​o​u​ ​h​a​v​e​ ​n​o​t​ ​m​a​d​e​ ​a​n​y​ ​t​r​a​n​s​a​c​t​i​o​n​s​ ​f​o​r​ ​t​h​e​ ​s​e​l​e​c​t​e​d​ ​y​e​a​r​.
+         */
+        noTransactions: string;
+      };
+    };
+    scheduleAl: {
+      headers: {
+        /**
+         * C​o​d​e
+         */
+        code: string;
+        /**
+         * S​e​c​t​i​o​n
+         */
+        section: string;
+        /**
+         * D​e​t​a​i​l​s
+         */
+        details: string;
+        /**
+         * A​m​o​u​n​t
+         */
+        amount: string;
+      };
+      /**
+       * S​c​h​e​d​u​l​e​ ​A​L​ ​a​s​ ​o​n
+       */
+      asOn: string;
+    };
+  };
 };
 
 export type TranslationFunctions = {
@@ -602,6 +992,396 @@ export type TranslationFunctions = {
      * Details
      */
     detailsLabel: () => LocalizedString;
+  };
+  tables: {
+    columns: {
+      /**
+       * Account
+       */
+      account: () => LocalizedString;
+      /**
+       * Market Value
+       */
+      marketValue: () => LocalizedString;
+      /**
+       * Percent
+       */
+      percent: () => LocalizedString;
+      /**
+       * %
+       */
+      percentSymbol: () => LocalizedString;
+      /**
+       * Drawn Amount
+       */
+      drawnAmount: () => LocalizedString;
+      /**
+       * Repaid Amount
+       */
+      repaidAmount: () => LocalizedString;
+      /**
+       * Balance Amount
+       */
+      balanceAmount: () => LocalizedString;
+      /**
+       * Interest
+       */
+      interest: () => LocalizedString;
+      /**
+       * APR
+       */
+      apr: () => LocalizedString;
+      /**
+       * Investment Amount
+       */
+      investmentAmount: () => LocalizedString;
+      /**
+       * Withdrawal Amount
+       */
+      withdrawalAmount: () => LocalizedString;
+      /**
+       * Balance Units
+       */
+      balanceUnits: () => LocalizedString;
+      /**
+       * Change
+       */
+      change: () => LocalizedString;
+      /**
+       * XIRR
+       */
+      xirr: () => LocalizedString;
+      /**
+       * Absolute Return
+       */
+      absoluteReturn: () => LocalizedString;
+      /**
+       * Commodity Name
+       */
+      commodityName: () => LocalizedString;
+      /**
+       * Last Date
+       */
+      lastDate: () => LocalizedString;
+      /**
+       * Last Price
+       */
+      lastPrice: () => LocalizedString;
+      /**
+       * 1 Day
+       */
+      oneDay: () => LocalizedString;
+      /**
+       * 1 Week
+       */
+      oneWeek: () => LocalizedString;
+      /**
+       * 4 Weeks
+       */
+      fourWeeks: () => LocalizedString;
+      /**
+       * 1 Year
+       */
+      oneYear: () => LocalizedString;
+      /**
+       * 3 Years
+       */
+      threeYears: () => LocalizedString;
+      /**
+       * 5 Years
+       */
+      fiveYears: () => LocalizedString;
+      /**
+       * Commodity Type
+       */
+      commodityType: () => LocalizedString;
+      /**
+       * Commodity ID
+       */
+      commodityId: () => LocalizedString;
+      /**
+       * Code
+       */
+      code: () => LocalizedString;
+      /**
+       * Section
+       */
+      section: () => LocalizedString;
+      /**
+       * Details
+       */
+      details: () => LocalizedString;
+      /**
+       * Amount
+       */
+      amount: () => LocalizedString;
+      /**
+       * End Balance
+       */
+      endBalance: () => LocalizedString;
+      /**
+       * Start Balance
+       */
+      startBalance: () => LocalizedString;
+    };
+    allocation: {
+      columns: {
+        /**
+         * Account
+         */
+        account: () => LocalizedString;
+        /**
+         * Market Value
+         */
+        marketValue: () => LocalizedString;
+        /**
+         * Percent
+         */
+        percent: () => LocalizedString;
+        /**
+         * %
+         */
+        percentSymbol: () => LocalizedString;
+      };
+      labels: {
+        /**
+         * Allocation Targets
+         */
+        allocationTargets: () => LocalizedString;
+        /**
+         * Allocation by category
+         */
+        allocationByCategory: () => LocalizedString;
+        /**
+         * Allocation by value
+         */
+        allocationByValue: () => LocalizedString;
+        /**
+         * Allocation Timeline
+         */
+        allocationTimeline: () => LocalizedString;
+        /**
+         * Allocation Table
+         */
+        allocationTable: () => LocalizedString;
+      };
+    };
+    liabilities: {
+      columns: {
+        /**
+         * Account
+         */
+        account: () => LocalizedString;
+        /**
+         * Drawn Amount
+         */
+        drawnAmount: () => LocalizedString;
+        /**
+         * Repaid Amount
+         */
+        repaidAmount: () => LocalizedString;
+        /**
+         * Balance Amount
+         */
+        balanceAmount: () => LocalizedString;
+        /**
+         * Interest
+         */
+        interest: () => LocalizedString;
+        /**
+         * APR
+         */
+        apr: () => LocalizedString;
+      };
+      messages: {
+        /**
+         * Hurray! You have no liabilities.
+         */
+        noLiabilities: () => LocalizedString;
+      };
+    };
+    assets: {
+      columns: {
+        /**
+         * Account
+         */
+        account: () => LocalizedString;
+        /**
+         * Investment Amount
+         */
+        investmentAmount: () => LocalizedString;
+        /**
+         * Withdrawal Amount
+         */
+        withdrawalAmount: () => LocalizedString;
+        /**
+         * Balance Units
+         */
+        balanceUnits: () => LocalizedString;
+        /**
+         * Market Value
+         */
+        marketValue: () => LocalizedString;
+        /**
+         * Change
+         */
+        change: () => LocalizedString;
+        /**
+         * XIRR
+         */
+        xirr: () => LocalizedString;
+        /**
+         * Absolute Return
+         */
+        absoluteReturn: () => LocalizedString;
+      };
+    };
+    price: {
+      headers: {
+        /**
+         * Commodity Name
+         */
+        commodityName: () => LocalizedString;
+        /**
+         * Last Date
+         */
+        lastDate: () => LocalizedString;
+        /**
+         * Last Price
+         */
+        lastPrice: () => LocalizedString;
+        /**
+         * 1 Day
+         */
+        oneDay: () => LocalizedString;
+        /**
+         * 1 Week
+         */
+        oneWeek: () => LocalizedString;
+        /**
+         * 4 Weeks
+         */
+        fourWeeks: () => LocalizedString;
+        /**
+         * 1 Year
+         */
+        oneYear: () => LocalizedString;
+        /**
+         * 3 Years
+         */
+        threeYears: () => LocalizedString;
+        /**
+         * 5 Years
+         */
+        fiveYears: () => LocalizedString;
+        /**
+         * Commodity Type
+         */
+        commodityType: () => LocalizedString;
+        /**
+         * Commodity ID
+         */
+        commodityId: () => LocalizedString;
+      };
+      /**
+       * Clear Price Cache
+       */
+      clearCache: () => LocalizedString;
+    };
+    incomeStatement: {
+      headers: {
+        /**
+         * Account
+         */
+        account: () => LocalizedString;
+        /**
+         * Change
+         */
+        change: () => LocalizedString;
+        /**
+         * End Balance
+         */
+        endBalance: () => LocalizedString;
+        /**
+         * Start Balance
+         */
+        startBalance: () => LocalizedString;
+      };
+      labels: {
+        /**
+         * Income
+         */
+        income: () => LocalizedString;
+        /**
+         * Tax
+         */
+        tax: () => LocalizedString;
+        /**
+         * Interest
+         */
+        interest: () => LocalizedString;
+        /**
+         * Gain / Loss
+         */
+        gainLoss: () => LocalizedString;
+        /**
+         * Equity
+         */
+        equity: () => LocalizedString;
+        /**
+         * Liabilities
+         */
+        liabilities: () => LocalizedString;
+        /**
+         * Expenses
+         */
+        expenses: () => LocalizedString;
+      };
+      summary: {
+        /**
+         * Start
+         */
+        start: () => LocalizedString;
+        /**
+         * End
+         */
+        end: () => LocalizedString;
+        /**
+         * change
+         */
+        change: () => LocalizedString;
+      };
+      messages: {
+        /**
+         * Oops! You have not made any transactions for the selected year.
+         */
+        noTransactions: () => LocalizedString;
+      };
+    };
+    scheduleAl: {
+      headers: {
+        /**
+         * Code
+         */
+        code: () => LocalizedString;
+        /**
+         * Section
+         */
+        section: () => LocalizedString;
+        /**
+         * Details
+         */
+        details: () => LocalizedString;
+        /**
+         * Amount
+         */
+        amount: () => LocalizedString;
+      };
+      /**
+       * Schedule AL as on
+       */
+      asOn: () => LocalizedString;
+    };
   };
 };
 

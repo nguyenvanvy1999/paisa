@@ -10,6 +10,7 @@
   import Table from "$lib/components/Table.svelte";
   import { accountName, nonZeroCurrency } from "$lib/table_formatters";
   import { ajax, formatPercentage, rem, type Aggregate, type Legend } from "$lib/utils";
+  import { LL } from "$lib/i18n/i18n-svelte";
   import _ from "lodash";
   import { onMount, tick } from "svelte";
   import type { ColumnDefinition, ProgressBarParams } from "tabulator-tables";
@@ -21,21 +22,21 @@
   let total = 0;
 
   const columns: ColumnDefinition[] = [
-    { title: "Account", field: "account", formatter: accountName },
+    { title: $LL.tables.allocation.columns.account(), field: "account", formatter: accountName },
     {
-      title: "Market Value",
+      title: $LL.tables.allocation.columns.marketValue(),
       field: "market_amount",
       hozAlign: "right",
       formatter: nonZeroCurrency
     },
     {
-      title: "Percent",
+      title: $LL.tables.allocation.columns.percent(),
       field: "percent",
       hozAlign: "right",
       formatter: (cell) => formatPercentage(cell.getValue() / 100, 2)
     },
     {
-      title: "%",
+      title: $LL.tables.allocation.columns.percentSymbol(),
       field: "percent",
       hozAlign: "right",
       formatter: "progress",
@@ -87,7 +88,7 @@
         </div>
       </div>
     </div>
-    <BoxLabel text="Allocation Targets" />
+    <BoxLabel text={$LL.tables.allocation.labels.allocationTargets()} />
   </div>
 </section>
 <section class="section tab-allocation">
@@ -97,7 +98,7 @@
         <div id="d3-allocation-category" style="width: 100%; height: {depth * 100}px" />
       </div>
     </div>
-    <BoxLabel text="Allocation by category" />
+    <BoxLabel text={$LL.tables.allocation.labels.allocationByCategory()} />
   </div>
 </section>
 <section class="section tab-allocation">
@@ -107,7 +108,7 @@
         <div id="d3-allocation-value" style="width: 100%; height: 300px" />
       </div>
     </div>
-    <BoxLabel text="Allocation by value" />
+    <BoxLabel text={$LL.tables.allocation.labels.allocationByValue()} />
   </div>
 </section>
 <section class="section tab-allocation">
@@ -120,7 +121,7 @@
         </div>
       </div>
     </div>
-    <BoxLabel text="Allocation Timeline" />
+    <BoxLabel text={$LL.tables.allocation.labels.allocationTimeline()} />
   </div>
 </section>
 <section class="section tab-allocation">
@@ -130,6 +131,6 @@
         <Table data={aggregateLeafNodes} tree {columns} />
       </div>
     </div>
-    <BoxLabel text="Allocation Table" />
+    <BoxLabel text={$LL.tables.allocation.labels.allocationTable()} />
   </div>
 </section>

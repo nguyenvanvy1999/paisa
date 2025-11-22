@@ -2,6 +2,7 @@
   import Toggleable from "$lib/components/Toggleable.svelte";
   import ValueChange from "$lib/components/ValueChange.svelte";
   import { ajax, formatCurrency, type Price } from "$lib/utils";
+  import { LL } from "$lib/i18n/i18n-svelte";
   import { toast } from "bulma-toast";
   import _ from "lodash";
   import { onMount } from "svelte";
@@ -67,7 +68,7 @@
                 <span class="icon is-small">
                   <i class="fas fa-trash-can" />
                 </span>
-                <span>Clear Price Cache</span>
+                <span>{$LL.tables.price.clearCache()}</span>
               </button>
             </p>
           </div>
@@ -79,17 +80,17 @@
             <thead>
               <tr>
                 <th />
-                <th>Commodity Name</th>
-                <th>Last Date</th>
-                <th class="has-text-right">Last Price</th>
-                <th class="has-text-right">1 Day</th>
-                <th class="has-text-right">1 Week</th>
-                <th class="has-text-right">4 Weeks</th>
-                <th class="has-text-right">1 Year</th>
-                <th class="has-text-right">3 Years</th>
-                <th class="has-text-right">5 Years</th>
-                <th>Commodity Type</th>
-                <th>Commodity ID</th>
+                <th>{$LL.tables.price.headers.commodityName()}</th>
+                <th>{$LL.tables.price.headers.lastDate()}</th>
+                <th class="has-text-right">{$LL.tables.price.headers.lastPrice()}</th>
+                <th class="has-text-right">{$LL.tables.price.headers.oneDay()}</th>
+                <th class="has-text-right">{$LL.tables.price.headers.oneWeek()}</th>
+                <th class="has-text-right">{$LL.tables.price.headers.fourWeeks()}</th>
+                <th class="has-text-right">{$LL.tables.price.headers.oneYear()}</th>
+                <th class="has-text-right">{$LL.tables.price.headers.threeYears()}</th>
+                <th class="has-text-right">{$LL.tables.price.headers.fiveYears()}</th>
+                <th>{$LL.tables.price.headers.commodityType()}</th>
+                <th>{$LL.tables.price.headers.commodityId()}</th>
               </tr>
             </thead>
             <tbody class="has-text-grey-dark">

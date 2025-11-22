@@ -10,6 +10,7 @@
     type IncomeStatement,
     firstName
   } from "$lib/utils";
+  import { LL } from "$lib/i18n/i18n-svelte";
   import { dateMin, year } from "../../../../store";
   import ZeroState from "$lib/components/ZeroState.svelte";
   import { iconify } from "$lib/icon";
@@ -85,6 +86,60 @@
     return Array.from(accounts).sort();
   }
 
+  $: if ($LL) {
+    accountGroups.length = 0;
+    if (yearly && Object.keys(yearly).length > 0) {
+      accountGroups.push({
+        key: "income",
+        accounts: uniqueAccounts(_.values(yearly), "income"),
+        label: $LL.tables.incomeStatement.labels.income(),
+        multiplier: -1
+      });
+
+      accountGroups.push({
+        key: "tax",
+        accounts: uniqueAccounts(_.values(yearly), "tax"),
+        label: $LL.tables.incomeStatement.labels.tax(),
+        multiplier: -1
+      });
+
+      accountGroups.push({
+        key: "interest",
+        accounts: uniqueAccounts(_.values(yearly), "interest"),
+        label: $LL.tables.incomeStatement.labels.interest(),
+        multiplier: -1
+      });
+
+      accountGroups.push({
+        key: "pnl",
+        accounts: uniqueAccounts(_.values(yearly), "pnl"),
+        label: $LL.tables.incomeStatement.labels.gainLoss(),
+        multiplier: 1
+      });
+
+      accountGroups.push({
+        key: "equity",
+        accounts: uniqueAccounts(_.values(yearly), "equity"),
+        label: $LL.tables.incomeStatement.labels.equity(),
+        multiplier: -1
+      });
+
+      accountGroups.push({
+        key: "liabilities",
+        accounts: uniqueAccounts(_.values(yearly), "liabilities"),
+        label: $LL.tables.incomeStatement.labels.liabilities(),
+        multiplier: -1
+      });
+
+      accountGroups.push({
+        key: "expenses",
+        accounts: uniqueAccounts(_.values(yearly), "expenses"),
+        label: $LL.tables.incomeStatement.labels.expenses(),
+        multiplier: -1
+      });
+    }
+  }
+
   onMount(async () => {
     ({ yearly } = await ajax("/api/income_statement"));
     const y = _.minBy(_.values(yearly), (y) => y.date);
@@ -92,55 +147,6 @@
     if (y) {
       dateMin.set(y.date);
     }
-
-    accountGroups.push({
-      key: "income",
-      accounts: uniqueAccounts(_.values(yearly), "income"),
-      label: "Income",
-      multiplier: -1
-    });
-
-    accountGroups.push({
-      key: "tax",
-      accounts: uniqueAccounts(_.values(yearly), "tax"),
-      label: "Tax",
-      multiplier: -1
-    });
-
-    accountGroups.push({
-      key: "interest",
-      accounts: uniqueAccounts(_.values(yearly), "interest"),
-      label: "Interest",
-      multiplier: -1
-    });
-
-    accountGroups.push({
-      key: "pnl",
-      accounts: uniqueAccounts(_.values(yearly), "pnl"),
-      label: "Gain / Loss",
-      multiplier: 1
-    });
-
-    accountGroups.push({
-      key: "equity",
-      accounts: uniqueAccounts(_.values(yearly), "equity"),
-      label: "Equity",
-      multiplier: -1
-    });
-
-    accountGroups.push({
-      key: "liabilities",
-      accounts: uniqueAccounts(_.values(yearly), "liabilities"),
-      label: "Liabilities",
-      multiplier: -1
-    });
-
-    accountGroups.push({
-      key: "expenses",
-      accounts: uniqueAccounts(_.values(yearly), "expenses"),
-      label: "Expenses",
-      multiplier: -1
-    });
   });
 </script>
 
@@ -155,20 +161,26 @@
                 {$year}
               </div>
               <div class="ml-3 whitespace-nowrap">
-                <span class="mr-1 is-size-7 has-text-grey">Start</span>
+                <span class="mr-1 is-size-7 has-text-grey"
+                  >{$LL.tables.incomeStatement.summary.start()}</span
+                >
                 <span class="has-text-weight-bold"
                   >{formatCurrency(incomeStatement.startingBalance)}</span
                 >
               </div>
               <div class="ml-3 whitespace-nowrap">
-                <span class="mr-1 is-size-7 has-text-grey">End</span>
+                <span class="mr-1 is-size-7 has-text-grey"
+                  >{$LL.tables.incomeStatement.summary.end()}</span
+                >
                 <span class="has-text-weight-bold"
                   >{formatCurrency(incomeStatement.endingBalance)}</span
                 >
               </div>
 
               <div class="ml-3 whitespace-nowrap">
-                <span class="mr-1 is-size-7 has-text-grey">change</span>
+                <span class="mr-1 is-size-7 has-text-grey"
+                  >{$LL.tables.incomeStatement.summary.change()}</span
+                >
                 <span class="has-text-weight-bold {changeClass(diff)}">{formatCurrency(diff)}</span>
                 <span class="mr-1 is-size-7 has-text-weight-bold {changeClass(diff)}"
                   >{formatPercentage(diffPercent, 2)}</span
@@ -181,7 +193,7 @@
       <div class="column is-12">
         <div class="box overflow-x-auto">
           <ZeroState item={!isEmpty}
-            ><strong>Oops!</strong> You have not made any transactions for the selected year.</ZeroState
+            >{$LL.tables.incomeStatement.messages.noTransactions()}</ZeroState
           >
 
           <svg class:is-not-visible={isEmpty} bind:this={svg}></svg>
@@ -201,7 +213,7 @@
           >
             <thead>
               <tr>
-                <th class="py-2">Account</th>
+                <th class="py-2">{$LL.tables.incomeStatement.headers.account()}</th>
                 {#each years as y}
                   <th class="py-2 has-text-right">{y}</th>
                 {/each}
@@ -239,7 +251,7 @@
               {/each}
 
               <tr class="has-text-weight-bold">
-                <th>Change</th>
+                <th>{$LL.tables.incomeStatement.headers.change()}</th>
                 {#each years as y}
                   {#if yearly[y]}
                     {@const diff = yearly[y].endingBalance - yearly[y].startingBalance}
@@ -253,7 +265,7 @@
                 {/each}
               </tr>
               <tr class="has-text-weight-bold">
-                <th>End Balance</th>
+                <th>{$LL.tables.incomeStatement.headers.endBalance()}</th>
                 {#each years as y}
                   <td class="has-text-right">
                     {#if yearly[y]}
@@ -263,7 +275,7 @@
                 {/each}
               </tr>
               <tr class="has-text-weight-bold">
-                <th>Start Balance</th>
+                <th>{$LL.tables.incomeStatement.headers.startBalance()}</th>
                 {#each years as y}
                   <td class="has-text-right">
                     {#if yearly[y]}

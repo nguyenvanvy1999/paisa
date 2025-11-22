@@ -96,6 +96,132 @@ const vi: Translation = {
     bugReportLabel: "Báo lỗi lên GitHub",
     restartHint: "Hãy thử đóng và mở lại ứng dụng.",
     detailsLabel: "Chi tiết"
+  },
+  tables: {
+    columns: {
+      account: "Tài khoản",
+      marketValue: "Giá trị thị trường",
+      percent: "Phần trăm",
+      percentSymbol: "%",
+      drawnAmount: "Số tiền đã rút",
+      repaidAmount: "Số tiền đã trả",
+      balanceAmount: "Số dư",
+      interest: "Lãi suất",
+      apr: "APR",
+      investmentAmount: "Số tiền đầu tư",
+      withdrawalAmount: "Số tiền rút",
+      balanceUnits: "Số đơn vị dư",
+      change: "Thay đổi",
+      xirr: "XIRR",
+      absoluteReturn: "Lợi nhuận tuyệt đối",
+      commodityName: "Tên hàng hóa",
+      lastDate: "Ngày cuối",
+      lastPrice: "Giá cuối",
+      oneDay: "1 Ngày",
+      oneWeek: "1 Tuần",
+      fourWeeks: "4 Tuần",
+      oneYear: "1 Năm",
+      threeYears: "3 Năm",
+      fiveYears: "5 Năm",
+      commodityType: "Loại hàng hóa",
+      commodityId: "ID Hàng hóa",
+      code: "Mã",
+      section: "Phần",
+      details: "Chi tiết",
+      amount: "Số tiền",
+      endBalance: "Số dư cuối",
+      startBalance: "Số dư đầu"
+    },
+    allocation: {
+      columns: {
+        account: "Tài khoản",
+        marketValue: "Giá trị thị trường",
+        percent: "Phần trăm",
+        percentSymbol: "%"
+      },
+      labels: {
+        allocationTargets: "Mục tiêu phân bổ",
+        allocationByCategory: "Phân bổ theo danh mục",
+        allocationByValue: "Phân bổ theo giá trị",
+        allocationTimeline: "Dòng thời gian phân bổ",
+        allocationTable: "Bảng phân bổ"
+      }
+    },
+    liabilities: {
+      columns: {
+        account: "Tài khoản",
+        drawnAmount: "Số tiền đã rút",
+        repaidAmount: "Số tiền đã trả",
+        balanceAmount: "Số dư",
+        interest: "Lãi suất",
+        apr: "APR"
+      },
+      messages: {
+        noLiabilities: "Tuyệt vời! Bạn không có khoản nợ nào."
+      }
+    },
+    assets: {
+      columns: {
+        account: "Tài khoản",
+        investmentAmount: "Số tiền đầu tư",
+        withdrawalAmount: "Số tiền rút",
+        balanceUnits: "Số đơn vị dư",
+        marketValue: "Giá trị thị trường",
+        change: "Thay đổi",
+        xirr: "XIRR",
+        absoluteReturn: "Lợi nhuận tuyệt đối"
+      }
+    },
+    price: {
+      headers: {
+        commodityName: "Tên hàng hóa",
+        lastDate: "Ngày cuối",
+        lastPrice: "Giá cuối",
+        oneDay: "1 Ngày",
+        oneWeek: "1 Tuần",
+        fourWeeks: "4 Tuần",
+        oneYear: "1 Năm",
+        threeYears: "3 Năm",
+        fiveYears: "5 Năm",
+        commodityType: "Loại hàng hóa",
+        commodityId: "ID Hàng hóa"
+      },
+      clearCache: "Xóa bộ nhớ đệm giá"
+    },
+    incomeStatement: {
+      headers: {
+        account: "Tài khoản",
+        change: "Thay đổi",
+        endBalance: "Số dư cuối",
+        startBalance: "Số dư đầu"
+      },
+      labels: {
+        income: "Thu nhập",
+        tax: "Thuế",
+        interest: "Lãi suất",
+        gainLoss: "Lãi / Lỗ",
+        equity: "Vốn chủ sở hữu",
+        liabilities: "Nợ phải trả",
+        expenses: "Chi phí"
+      },
+      summary: {
+        start: "Đầu",
+        end: "Cuối",
+        change: "thay đổi"
+      },
+      messages: {
+        noTransactions: "Ối! Bạn chưa thực hiện giao dịch nào trong năm đã chọn."
+      }
+    },
+    scheduleAl: {
+      headers: {
+        code: "Mã",
+        section: "Phần",
+        details: "Chi tiết",
+        amount: "Số tiền"
+      },
+      asOn: "Schedule AL tính đến ngày"
+    }
   }
 };
 

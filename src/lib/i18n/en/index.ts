@@ -97,6 +97,132 @@ const en: BaseTranslation = {
     bugReportLabel: "Report issue on GitHub",
     restartHint: "Closing and reopening the app may help.",
     detailsLabel: "Details"
+  },
+  tables: {
+    columns: {
+      account: "Account",
+      marketValue: "Market Value",
+      percent: "Percent",
+      percentSymbol: "%",
+      drawnAmount: "Drawn Amount",
+      repaidAmount: "Repaid Amount",
+      balanceAmount: "Balance Amount",
+      interest: "Interest",
+      apr: "APR",
+      investmentAmount: "Investment Amount",
+      withdrawalAmount: "Withdrawal Amount",
+      balanceUnits: "Balance Units",
+      change: "Change",
+      xirr: "XIRR",
+      absoluteReturn: "Absolute Return",
+      commodityName: "Commodity Name",
+      lastDate: "Last Date",
+      lastPrice: "Last Price",
+      oneDay: "1 Day",
+      oneWeek: "1 Week",
+      fourWeeks: "4 Weeks",
+      oneYear: "1 Year",
+      threeYears: "3 Years",
+      fiveYears: "5 Years",
+      commodityType: "Commodity Type",
+      commodityId: "Commodity ID",
+      code: "Code",
+      section: "Section",
+      details: "Details",
+      amount: "Amount",
+      endBalance: "End Balance",
+      startBalance: "Start Balance"
+    },
+    allocation: {
+      columns: {
+        account: "Account",
+        marketValue: "Market Value",
+        percent: "Percent",
+        percentSymbol: "%"
+      },
+      labels: {
+        allocationTargets: "Allocation Targets",
+        allocationByCategory: "Allocation by category",
+        allocationByValue: "Allocation by value",
+        allocationTimeline: "Allocation Timeline",
+        allocationTable: "Allocation Table"
+      }
+    },
+    liabilities: {
+      columns: {
+        account: "Account",
+        drawnAmount: "Drawn Amount",
+        repaidAmount: "Repaid Amount",
+        balanceAmount: "Balance Amount",
+        interest: "Interest",
+        apr: "APR"
+      },
+      messages: {
+        noLiabilities: "Hurray! You have no liabilities."
+      }
+    },
+    assets: {
+      columns: {
+        account: "Account",
+        investmentAmount: "Investment Amount",
+        withdrawalAmount: "Withdrawal Amount",
+        balanceUnits: "Balance Units",
+        marketValue: "Market Value",
+        change: "Change",
+        xirr: "XIRR",
+        absoluteReturn: "Absolute Return"
+      }
+    },
+    price: {
+      headers: {
+        commodityName: "Commodity Name",
+        lastDate: "Last Date",
+        lastPrice: "Last Price",
+        oneDay: "1 Day",
+        oneWeek: "1 Week",
+        fourWeeks: "4 Weeks",
+        oneYear: "1 Year",
+        threeYears: "3 Years",
+        fiveYears: "5 Years",
+        commodityType: "Commodity Type",
+        commodityId: "Commodity ID"
+      },
+      clearCache: "Clear Price Cache"
+    },
+    incomeStatement: {
+      headers: {
+        account: "Account",
+        change: "Change",
+        endBalance: "End Balance",
+        startBalance: "Start Balance"
+      },
+      labels: {
+        income: "Income",
+        tax: "Tax",
+        interest: "Interest",
+        gainLoss: "Gain / Loss",
+        equity: "Equity",
+        liabilities: "Liabilities",
+        expenses: "Expenses"
+      },
+      summary: {
+        start: "Start",
+        end: "End",
+        change: "change"
+      },
+      messages: {
+        noTransactions: "Oops! You have not made any transactions for the selected year."
+      }
+    },
+    scheduleAl: {
+      headers: {
+        code: "Code",
+        section: "Section",
+        details: "Details",
+        amount: "Amount"
+      },
+      asOn: "Schedule AL as on"
+    }
   }
 };
 
