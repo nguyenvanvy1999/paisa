@@ -10,9 +10,7 @@ export const normalizeLocaleCode = (value?: string | null): Locales | null => {
   );
 };
 
-export const resolvePreferredLocale = (
-  candidates: Array<string | null | undefined>
-): Locales => {
+export const resolvePreferredLocale = (candidates: Array<string | null | undefined>): Locales => {
   for (const candidate of candidates) {
     const normalized = normalizeLocaleCode(candidate);
     if (normalized) {
@@ -21,4 +19,3 @@ export const resolvePreferredLocale = (
   }
   return baseLocale;
 };
-

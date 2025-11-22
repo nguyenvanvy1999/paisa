@@ -13,5 +13,4 @@
 2. Luồng đăng nhập + thông báo invalid credential.
 3. Các component tái sử dụng (zero-state, modals) để tránh trùng lặp text.
 
-Các khu vực chuyên sâu (báo cáo, bảng phân tích) sẽ được gom theo module riêng sau khi hoàn thiện nền tảng dịch.*** End Patch
-
+Các khu vực chuyên sâu (báo cáo, bảng phân tích) sẽ được gom theo module riêng sau khi hoàn thiện nền tảng dịch.\*\*\* End Patch

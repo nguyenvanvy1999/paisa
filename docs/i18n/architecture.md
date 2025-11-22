@@ -43,4 +43,3 @@ src/
 3. Sao chép key sang locale khác (`vi`), update bản dịch.
 4. Nếu dùng formatter mới → khai báo ở `formatters.ts`, re-export trong `i18n-util`.
 5. Commit gồm thay đổi base locale + file autogen tương ứng.
-

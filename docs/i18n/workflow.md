@@ -29,4 +29,3 @@ Module `src/lib/i18n/locale.ts` chịu trách nhiệm:
   - Cập nhật `.typesafe-i18n.json` (`baseLocale` nếu thay đổi).
   - Thêm folder `src/lib/i18n/<locale>/index.ts`.
   - Cập nhật `docs/i18n/architecture.md` nếu có thay đổi workflow.
-

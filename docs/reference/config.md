@@ -112,8 +112,8 @@ budget:
 goals:
   # Retirement goals
   retirement:
-      # Goal name
-      # REQUIRED
+    # Goal name
+    # REQUIRED
     - name: Retirement
       # Goal icon
       # REQUIRED
@@ -145,8 +145,8 @@ goals:
       # OPTIONAL, DEFAULT: 0
       yearly_expenses: 0
   savings:
-      # Goal name
-      # REQUIRED
+    # Goal name
+    # REQUIRED
     - name: House
       # Goal icon
       # REQUIRED

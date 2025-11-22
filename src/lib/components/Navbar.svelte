@@ -64,7 +64,11 @@
           href: "/income_statement",
           financialYearPicker: true
         },
-        { label: (ll) => ll.nav.sections.cashFlow.monthly(), href: "/monthly", dateRangeSelector: true },
+        {
+          label: (ll) => ll.nav.sections.cashFlow.monthly(),
+          href: "/monthly",
+          dateRangeSelector: true
+        },
         {
           label: (ll) => ll.nav.sections.cashFlow.yearly(),
           href: "/yearly",
@@ -90,8 +94,17 @@
           monthPicker: true,
           dateRangeSelector: true
         },
-        { label: (ll) => ll.nav.sections.expenses.yearly(), href: "/yearly", financialYearPicker: true },
-        { label: (ll) => ll.nav.sections.expenses.budget(), href: "/budget", help: "budget", monthPicker: true }
+        {
+          label: (ll) => ll.nav.sections.expenses.yearly(),
+          href: "/yearly",
+          financialYearPicker: true
+        },
+        {
+          label: (ll) => ll.nav.sections.expenses.budget(),
+          href: "/budget",
+          help: "budget",
+          monthPicker: true
+        }
       ]
     },
     {
@@ -99,11 +112,24 @@
       href: "/assets",
       children: [
         { label: (ll) => ll.nav.sections.assets.balance(), href: "/balance" },
-        { label: (ll) => ll.nav.sections.assets.networth(), href: "/networth", dateRangeSelector: true },
+        {
+          label: (ll) => ll.nav.sections.assets.networth(),
+          href: "/networth",
+          dateRangeSelector: true
+        },
         { label: (ll) => ll.nav.sections.assets.investment(), href: "/investment" },
         { label: (ll) => ll.nav.sections.assets.gain(), href: "/gain" },
-        { label: (ll) => ll.nav.sections.assets.allocation(), href: "/allocation", help: "allocation-targets" },
-        { label: (ll) => ll.nav.sections.assets.analysis(), href: "/analysis", tag: "alpha", help: "analysis" }
+        {
+          label: (ll) => ll.nav.sections.assets.allocation(),
+          href: "/allocation",
+          help: "allocation-targets"
+        },
+        {
+          label: (ll) => ll.nav.sections.assets.analysis(),
+          href: "/analysis",
+          tag: "alpha",
+          help: "analysis"
+        }
       ]
     },
     {
@@ -111,7 +137,11 @@
       href: "/liabilities",
       children: [
         { label: (ll) => ll.nav.sections.liabilities.balance(), href: "/balance" },
-        { label: (ll) => ll.nav.sections.liabilities.creditCards(), href: "/credit_cards", help: "credit-cards" },
+        {
+          label: (ll) => ll.nav.sections.liabilities.creditCards(),
+          href: "/credit_cards",
+          help: "credit-cards"
+        },
         { label: (ll) => ll.nav.sections.liabilities.repayment(), href: "/repayment" },
         { label: (ll) => ll.nav.sections.liabilities.interest(), href: "/interest" }
       ]
@@ -122,8 +152,17 @@
       href: "/ledger",
       children: [
         { label: (ll) => ll.nav.sections.ledger["import"](), href: "/import", help: "import" },
-        { label: (ll) => ll.nav.sections.ledger.editor(), href: "/editor", help: "editor", disablePreload: true },
-        { label: (ll) => ll.nav.sections.ledger.transactions(), href: "/transaction", help: "bulk-edit" },
+        {
+          label: (ll) => ll.nav.sections.ledger.editor(),
+          href: "/editor",
+          help: "editor",
+          disablePreload: true
+        },
+        {
+          label: (ll) => ll.nav.sections.ledger.transactions(),
+          href: "/transaction",
+          help: "bulk-edit"
+        },
         { label: (ll) => ll.nav.sections.ledger.postings(), href: "/posting" },
         { label: (ll) => ll.nav.sections.ledger.price(), href: "/price" }
       ]
@@ -133,7 +172,12 @@
       href: "/more",
       children: [
         { label: (ll) => ll.nav.sections.more.config(), href: "/config", help: "config" },
-        { label: (ll) => ll.nav.sections.more.sheets(), href: "/sheets", help: "sheets", disablePreload: true },
+        {
+          label: (ll) => ll.nav.sections.more.sheets(),
+          href: "/sheets",
+          help: "sheets",
+          disablePreload: true
+        },
         { label: (ll) => ll.nav.sections.more.goals(), href: "/goals", help: "goals" },
         { label: (ll) => ll.nav.sections.more.doctor(), href: "/doctor" },
         { label: (ll) => ll.nav.sections.more.logs(), href: "/logs" }
@@ -146,7 +190,11 @@
     href: "/tax",
     help: "tax",
     children: [
-      { label: (ll: TranslationFunctions) => ll.nav.sections.more.taxHarvest(), href: "/harvest", help: "tax-harvesting" },
+      {
+        label: (ll: TranslationFunctions) => ll.nav.sections.more.taxHarvest(),
+        href: "/harvest",
+        help: "tax-harvesting"
+      },
       {
         label: (ll: TranslationFunctions) => ll.nav.sections.more.taxCapitalGains(),
         href: "/capital_gains",
@@ -165,7 +213,10 @@
     _.last(links).children.push(tax);
   }
 
-  const about = { label: (ll: TranslationFunctions) => ll.nav.sections.more.about(), href: "/about" };
+  const about = {
+    label: (ll: TranslationFunctions) => ll.nav.sections.more.about(),
+    href: "/about"
+  };
   _.last(links).children.push(about);
 
   let selectedLink: Link = null;

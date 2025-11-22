@@ -100,4 +100,3 @@ const vi: Translation = {
 };
 
 export default vi;
-

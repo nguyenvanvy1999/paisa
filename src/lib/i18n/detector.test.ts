@@ -31,4 +31,3 @@ describe("resolvePreferredLocale", () => {
     expect(resolvePreferredLocale([null, undefined, ""])).toBe("en");
   });
 });
-

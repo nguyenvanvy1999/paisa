@@ -101,4 +101,3 @@ const en: BaseTranslation = {
 };
 
 export default en;
-

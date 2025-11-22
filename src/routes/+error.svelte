@@ -13,9 +13,7 @@
             <div class="message-body">
               <p>{$LL.error.notFoundBody()}</p>
               <p class="mt-2">
-                <a class="is-primary-color" href="/"
-                  >{$LL.error.notFoundCta()}</a
-                >
+                <a class="is-primary-color" href="/">{$LL.error.notFoundCta()}</a>
               </p>
             </div>
           </article>
@@ -30,8 +28,10 @@
                 <pre class="mt-1">{$page.error.stack}</pre>
               {/if}
               <p class="mt-5">
-                <a href="https://github.com/ananthakumaran/paisa/issues" target="_blank" rel="noreferrer"
-                  >{$LL.error.bugReportLabel()}</a
+                <a
+                  href="https://github.com/ananthakumaran/paisa/issues"
+                  target="_blank"
+                  rel="noreferrer">{$LL.error.bugReportLabel()}</a
                 >
               </p>
               <p>{$LL.error.restartHint()}</p>

@@ -108,4 +108,3 @@ export const localeLabels = LOCALE_LABELS;
 
 setLocale(baseLocale);
 updateDocumentLang(baseLocale);
-
